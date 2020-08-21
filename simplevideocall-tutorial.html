@@ -29,8 +29,12 @@
     <div class="container">
       <div class="row">
         <div id="you" class="col-12 col-sm-6 col-md-6">
-          <h2>상대방</h2>
-          <video id="remoteVideo" class="remoteVideo" autoplay playsinline></video>
+          <h2>상대방1</h2>
+          <video id="remoteVideo1" class="remoteVideo" autoplay playsinline></video>
+        </div>
+        <div id="you" class="col-12 col-sm-6 col-md-6">
+          <h2>상대방2</h2>
+          <video id="remoteVideo2" class="remoteVideo" autoplay playsinline></video>
         </div>
         <div id="me" class="col-12 col-sm-6 col-md-6">
           <h2>나</h2>
@@ -53,7 +57,7 @@
       </div>
     </div>
 
-    <div w3-include-html="index.html"></div>
+    <div id=""></div>
 
     <div>
 
@@ -75,7 +79,7 @@
   <footer>
     <p>리모트몬스터 제공</p>
   </footer>
-  <script src="vidoe.js"></script>
+  <script src="video.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
@@ -90,7 +94,8 @@
         key: '6e779e7ed3e3bf6301d6b49529863fa0ebea59b903f2972c5565ba12201edb34'
       },
       view: {
-        remote: '#remoteVideo',
+        remote1: '#remoteVideo1',
+        remote2: '#remoteVideo21',
         local: '#localVideo'
       }
     }
