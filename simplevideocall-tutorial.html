@@ -7,6 +7,21 @@
   <title>리모트몬스터 단순 통화 앱</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <script  src ="https://www.webrtc-experiment.com/Canvas-Designer/canvas-designer-widget.js"> </script>
+  <script>
+    var designer = new CanvasDesigner();
+    
+    // both links are mandatory
+    // widget.html will internally use widget.js
+    designer.widgetHtmlURL = 'https://www.webrtc-experiment.com/Canvas-Designer/widget.html'; // you can place this file anywhere
+    designer.widgetJsURL = 'https://www.webrtc-experiment.com/Canvas-Designer/widget.js';     // you can place this file anywhere
+    </script>
+    
+    <!-- 3rd i.e. last step -->
+    <script>
+    // <iframe> will be appended to "document.body"
+    designer.appendTo(document.body || document.documentElement);
+    </script>
 </head>
 
 <body>
@@ -37,10 +52,30 @@
         </div>
       </div>
     </div>
+
+    <div w3-include-html="index.html"></div>
+
+    <div>
+
+      <button id='request'>
+        Request Camera
+      </button>
+      <button id='start'>
+        Start Recording
+      </button>
+      <button id='stop'>
+        Stop Recording
+      </button>
+      <ul id='ul'>
+        Downloads List:
+      </ul>
+    
+    </div>
   </main>
   <footer>
     <p>리모트몬스터 제공</p>
   </footer>
+  <script src="vidoe.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
