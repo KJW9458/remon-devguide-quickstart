@@ -108,8 +108,8 @@ function handleSuccess(stream) {
   recordButton.disabled = false;
   console.log('getUserMedia() got stream:', stream);
   window.stream = stream;
-
-  const gumVideo = document.querySelector('video#localVideo');
+//   video#localVideo
+  const gumVideo = document.querySelector('body#localBody');
   gumVideo.srcObject = stream;
 }
 
