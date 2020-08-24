@@ -54,11 +54,11 @@ const possibleEmojis = [
         return alert('The room is full');
       }
       // If we are the second user to connect to the room we will be creating the offer
-      const isOfferer = members.length === 2;
+      const isOfferer = members.length === 4;
       startWebRTC(isOfferer);
     });
   });
-  
+         
   // Send signaling data via Scaledrone
   function sendSignalingMessage(message) {
     drone.publish({
