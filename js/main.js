@@ -109,7 +109,7 @@ function handleSuccess(stream) {
   console.log('getUserMedia() got stream:', stream);
   window.stream = stream;
 //   video#localVideo
-  const gumVideo = document.querySelector('body#localBody');
+  const gumVideo = document.querySelector('#localBody');
   gumVideo.srcObject = stream;
 }
 
