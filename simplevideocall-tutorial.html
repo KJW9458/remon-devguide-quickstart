@@ -256,8 +256,9 @@
       url:"./search.php?text="+val,
       type:"GET",
       dataType:"json",
-    }).done(function(msg){
-      console.log(msg);
+      success:function(data){
+        console.log(data);
+      }
     });
   });
 </script>
