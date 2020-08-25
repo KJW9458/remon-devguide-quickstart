@@ -233,9 +233,8 @@
         url: "https://dapi.kakao.com/v2/search/web",
         data: {query: $("#dsearch").val()},
         headers: { Authorization: "KakaoAK d1d49d7eb30e0f6000f0fdf704e62e1d"},
-        success:function(data){
-          alert(data);
-        }
+      }).done(function(msg){
+        console.log(msg);
       })
     });
   })
