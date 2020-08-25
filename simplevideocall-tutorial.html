@@ -248,6 +248,18 @@
         $('#daum').append(msg.documents[0].contents);
       })
     });
+
+    $("#nbtn").click(function(){
+      $.ajax({
+        method: "GET",
+        url: "https://openapi.naver.com/v1/search/webkr.json",
+        data: {query: $("#nsearch").val()},
+        headers: { "X-Naver-Client-Id": "xvRY8SbDOk_9c2eNnV6m", "X-Naver-Client-Secret": "h4Om9RyMvN"},
+      }).done(function(msg){
+        console.log(msg);
+        
+      })
+    });
   })
   
 </script>
