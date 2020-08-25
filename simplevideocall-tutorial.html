@@ -253,7 +253,7 @@
       var val = $('#nsearch').val();
       $.ajax({
         url:"./search.php",
-        type:"POST",
+        type:"GET",
         data:{text:val},
         dataType:"json",
         success:function(data){

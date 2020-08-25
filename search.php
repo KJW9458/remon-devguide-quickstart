@@ -7,7 +7,7 @@ function json_test($query){
   $client_id = "xvRY8SbDOk_9c2eNnV6m";
   $client_secret = "h4Om9RyMvN";
   $encText = urlencode("진주");
-  $url = "https://openapi.naver.com/v1/search/book?query=".$encText;
+  $url = "https://openapi.naver.com/v1/search/webkr.json?query=".$encText;
   $is_post = false;
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $url);
