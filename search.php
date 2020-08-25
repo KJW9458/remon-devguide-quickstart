@@ -1,9 +1,7 @@
 <?php
-$text=$_REQUEST['text'];
-
   $client_id = "xvRY8SbDOk_9c2eNnV6m";
   $client_secret = "h4Om9RyMvN";
-  $encText = urlencode("$text");
+  $encText = urlencode("네이버오픈API");
   $url = "https://openapi.naver.com/v1/search/webkr.xml?query=".$encText; // json 결과
 //  $url = "https://openapi.naver.com/v1/search/blog.xml?query=".$encText; // xml 결과
   $is_post = false;
