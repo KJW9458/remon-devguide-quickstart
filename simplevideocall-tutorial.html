@@ -164,10 +164,12 @@
   </div>
   <div id="daum"></div>
 
+  <form method="POST" action="search.php">
   <div>
     <input type="text" id="nsearch" name="nsearch">
     <button id="nbtn">검색</button>
   </div>
+</form>
   <div id="naver"></div>
 
   <!-- <script src="script.js"></script> -->
@@ -247,26 +249,6 @@
         $('#daum').append(msg.documents[0].title);
         $('#daum').append(msg.documents[0].contents);
       })
-    });
-
-    $('#nbtn').click(function(){
-      var val = $('#nsearch').val();
-      $.ajax({
-        type:"GET",
-        url:"https://openapi.naver.com/v1/search/webkr.json",
-        headers:{
-          'Content-Type':'application/x-www-form-urlencoded',
-          'X-Naver-Client-Id':"xvRY8SbDOk_9c2eNnV6m",
-					'X-Naver-Client-Secret': "h4Om9RyMvN"
-        },
-        data:{'query':val},
-        success:function(msg){
-          console.log(msg);
-        },
-        error:function(request, status, error){
-          console.log("에러 :  " + request.status + "  " + request.reponseText);
-        }
-      });
     });
   });
 </script>
