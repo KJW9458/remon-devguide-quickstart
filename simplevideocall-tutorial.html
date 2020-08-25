@@ -226,15 +226,18 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script>
-  $("sbtn").click(function(){
-    $.ajax({
-      method: "GET",
-      url: "https://dapi.kakao.com/v2/search/web",
-      data: {query:$("#dsearch").val()},
-      headers: { Authorization: "KakaoAK d1d49d7eb30e0f6000f0fdf704e62e1d"}
-    }).done(function(msg){
-      console.log(msg);
-    })
-  });
+  $(function(){
+    $("sbtn").click(function(){
+      $.ajax({
+        method: "GET",
+        url: "https://dapi.kakao.com/v2/search/web",
+        data: {query:$("#dsearch").val()},
+        headers: { Authorization: "KakaoAK d1d49d7eb30e0f6000f0fdf704e62e1d"}
+      }).done(function(msg){
+        console.log(msg);
+      })
+    });
+  })
+  
 </script>
 </html>
