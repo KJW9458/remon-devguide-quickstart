@@ -12,7 +12,7 @@ function json_test($query){
   $is_post = false;
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_POST, $is_post);
+  // curl_setopt($ch, CURLOPT_POST, $is_post);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   $headers = array();
   $headers[] = "X-Naver-Client-Id: ".$client_id;
