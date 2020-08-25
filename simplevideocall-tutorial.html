@@ -161,7 +161,7 @@
   <input type="text" id="dsearch" name="dsearch">
   <button id="sbtn">검색</button>
 
-  <script src="script.js"></script>
+  <!-- <script src="script.js"></script> -->
   <script src="chat_script.js"></script>
   <footer>
     <p>리모트몬스터 제공</p>
@@ -231,10 +231,11 @@
       $.ajax({
         method: "GET",
         url: "https://dapi.kakao.com/v2/search/web",
-        data: {query:$("#dsearch").val()},
-        headers: { Authorization: "KakaoAK d1d49d7eb30e0f6000f0fdf704e62e1d"}
-      }).done(function(msg){
-        console.log(msg);
+        data: {query: $("#dsearch").val()},
+        headers: { Authorization: "KakaoAK d1d49d7eb30e0f6000f0fdf704e62e1d"},
+        success:function(data){
+          alert(data);
+        }
       })
     });
   })
