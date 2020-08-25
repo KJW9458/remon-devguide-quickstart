@@ -1,5 +1,5 @@
 <?php
-$text=$_REQUEST['type'];
+$text=$_REQUEST['text'];
 
   $client_id = "xvRY8SbDOk_9c2eNnV6m";
   $client_secret = "h4Om9RyMvN";
