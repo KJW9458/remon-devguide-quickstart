@@ -158,8 +158,17 @@
     </div>
   </template>
 
-  <input type="text" id="dsearch" name="dsearch">
-  <button id="sbtn">검색</button>
+  <div>
+    <input type="text" id="dsearch" name="dsearch">
+    <button id="sbtn">검색</button>
+  </div>
+  <div id="daum"></div>
+
+  <div>
+    <input type="text" id="nsearch" name="nsearch">
+    <button id="nbtn">검색</button>
+  </div>
+  <div id="naver"></div>
 
   <!-- <script src="script.js"></script> -->
   <script src="chat_script.js"></script>
@@ -235,6 +244,8 @@
         headers: { Authorization: "KakaoAK d1d49d7eb30e0f6000f0fdf704e62e1d"},
       }).done(function(msg){
         console.log(msg);
+        $('#daum').append(msg.documents[0].title);
+        $('#daum').append(msg.documents[0].contents);
       })
     });
   })
