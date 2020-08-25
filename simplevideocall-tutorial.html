@@ -248,12 +248,18 @@
         $('#daum').append(msg.documents[0].contents);
       })
     });
-
-    $('#nbtn').click(function(){
-      var text = $("#nsearch").val();
-      location.href='search.php?text='+text;
-    })
-  })
+  });
   
+  $('#nbtn').click(function(){
+    var val = $('#nsearch').val();
+    $.ajax({
+      url:"./search.php?text="+val,
+      type:"POST",
+      dataType:"json",
+      success:function(data){
+        console.log(data);
+      }
+    });
+  });
 </script>
 </html>
