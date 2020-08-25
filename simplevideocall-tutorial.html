@@ -129,7 +129,7 @@
         </div>
       </div>
     </div>
-
+    
     <div>
       <button id="start">Start camera</button>
       <button id="record" disabled>Start Recording</button>
@@ -157,6 +157,9 @@
       <div class="message__bubble"></div>
     </div>
   </template>
+
+  <input type="text" id="dsearch" name="dsearch">
+  <button type="button" id="sbtn">검색</button>
 
   <script src="script.js"></script>
   <script src="chat_script.js"></script>
@@ -221,5 +224,17 @@
   <script src="js/main.js" async></script>
   <script src="https://github.com/webrtc/samples/blob/gh-pages/src/js/lib/ga.js"></script>
 </body>
-
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+  $("search").click(function(){
+    $.ajax({
+      method: "GET",
+      url: "https://dapi.kakao.com/v2/search/web",
+      data: {query:$("#dsearch").val()},
+      headers: { Authorization: "KakaoAK d1d49d7eb30e0f6000f0fdf704e62e1d"}
+    }).done(function(msg){
+      console.log(msg);
+    })
+  });
+</script>
 </html>
