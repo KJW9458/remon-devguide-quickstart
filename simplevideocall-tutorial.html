@@ -254,10 +254,13 @@
     var val = $('#nsearch').val();
     $.ajax({
       url:"./search.php?text="+val,
-      type:"POST",
+      type:"GET",
       dataType:"json",
       success:function(data){
         console.log(data);
+      },
+      error:function(alt){
+        console.log(alt);
       }
     });
   });
