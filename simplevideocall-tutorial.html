@@ -256,12 +256,8 @@
       url:"./search.php?text="+val,
       type:"GET",
       dataType:"json",
-      success:function(data){
-        console.log(data);
-      },
-      error:function(alt){
-        console.log(alt);
-      }
+    }).done(function(msg){
+      console.log(msg);
     });
   });
 </script>
