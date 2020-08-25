@@ -252,14 +252,19 @@
     $('#nbtn').click(function(){
       var val = $('#nsearch').val();
       $.ajax({
-        url:"./search.php?text="+val,
         type:"GET",
-        dataType:"json",
-        success:function(data){
-          console.log(data);
+        url:"https://openapi.naver.com/v1/search/webkr.json",
+        headers:{
+          'Content-Type':'application/x-www-form-urlencoded',
+          'X-Naver-Client-Id':xvRY8SbDOk_9c2eNnV6m,
+					'X-Naver-Client-Secret': h4Om9RyMvN
         },
-        error:function(alt){
-          console.error();
+        data:{'query':val},
+        success:function(msg){
+          console.log(msg);
+        },
+        error:function(request, status, error){
+          console.log("에러 :  " + request.status + "  " + request.reponseText);
         }
       });
     });
