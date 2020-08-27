@@ -134,7 +134,7 @@ function CanvasDesigner() {
         window.removeEventListener('message', onMessage);
         window.addEventListener('message', onMessage, false);
 
-        parentNode.appendChild(designer.iframe);
+       parentNode.appendChild(designer.iframe);
     };
 
     designer.destroy = function() {
