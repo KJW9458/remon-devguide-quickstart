@@ -128,9 +128,15 @@
             </div>
             <div class="student-wrap">
                 <div class="box">
-                    <video id="gum" playsinline autoplay muted></video>
+                    <div id="you" class="col-12 col-sm-6 col-md-6">
+                        <video id="remoteVideo1" class="remoteVideo" autoplay playsinline></video>
+                    </div>
                 </div>
-                <div class="box"></div>
+                <div class="box">
+                    <div id="you" class="col-12 col-sm-6 col-md-6">
+                        <video id="remoteVideo2" class="remoteVideo" autoplay playsinline></video>
+                    </div>
+                </div>
             </div>
             <div class="chat-wrap">
                 <div class="title">채팅창</div>
@@ -224,7 +230,7 @@
             },
             view: {
                 remote1: '#remoteVideo1',
-                remote2: '#remoteVideo21',
+                remote2: '#remoteVideo2',
                 local: '#localVideo'
             }
         }
