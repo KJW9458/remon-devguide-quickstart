@@ -62,9 +62,9 @@ button {
     border: 1px solid #aaa
 }
 
-input:focus {
+/* input:focus {
     border-color: 
-}
+} */
 
 /*input[type=range] { width:100%; -webkit-appearance: ; background: transparent; }*/
  input[type=range] {
@@ -101,14 +101,19 @@ input:focus {
     border-radius:50%;
     cursor: pointer;
   }
-textarea:focus {
+/* textarea:focus {
     border-color: 
+} */
+
+video{
+    background-color: black;
+    object-fit: cover;
+    width: 400;
+    height: 400;
 }
 
-video{}
-
-footer {
-}
+/* footer {
+} */
 
 
 
@@ -287,5 +292,4 @@ display: flex;}
 
     #section02 .accessor {}
     #section02 .accessor .title{}
-}
 }
