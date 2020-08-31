@@ -107,7 +107,7 @@ button {
 
 video{
     background-color: gray;
-    object-fit: fill;
+    /* object-fit: fill; */
     width: 250px;
     height: 250px;
 }
