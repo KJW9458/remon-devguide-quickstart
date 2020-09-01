@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8“>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>홈페이지 이름</title>
+    <meta name="description" content="홈페이지 소개">
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/opengraph-img.jpg" />
+    <meta property="og:title" content="홈페이지 이름" />
+    <meta property="og:description" content="홈페이지 소개" />
+    <meta property="og:url" content="홈페이지 URL 입력" />
+    <meta name="robots" content="index,follow" />
+    <!-- Mobile Stuff -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Chrome on Android -->
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="홈페이지 이름">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean" rel="stylesheet">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="rgba(0,0,0,0)">
+    <meta name="naver-site-verification" content="01f26d1bf9dfb238fe359fb66ee4c816281dd2fe" />
+    <link rel="canonical" href="홈페이지 URL 입력">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+    
+    <script src="https://www.webrtc-experiment.com/Canvas-Designer/canvas-designer-widget.js"> </script>
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+    <script>
+        var designer = new CanvasDesigner();
+
+        // both links are mandatory
+        // widget.html will internally use widget.js
+        designer.widgetHtmlURL = 'https://www.webrtc-experiment.com/Canvas-Designer/widget.html'; // you can place this file anywhere
+        designer.widgetJsURL = 'https://www.webrtc-experiment.com/Canvas-Designer/widget.js';     // you can place this file anywhere
+    </script>
+    <script>
+    // <iframe> will be appended to "document.body"
+    designer.appendTo(document.getElementById('tab2') || document.documentElement);
+    </script>
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <section id="section01">
+            <div class="tab-wrap">
+                <div class="tab on" onclick="openTab(event, 'tab1')">화상공유</div>
+                <div class="tab" onclick="openTab(event, 'tab2')">문서공유</div>
+                <div class="tab" onclick="openTab(event, 'tab3')">오디오공유</div>
+                <div class="tab" onclick="openTab(event, 'tab4')">웹공유</div>
+            </div>
+            <div class="c-box01 tabcontent" id="tab1">
+                <video id="recorded" class="localVideo" muted autoplay playsinline></video>
+                화상공유
+                
+            </div>
+            <div class="c-box01 tabcontent canvas_tab" id="tab2" style="display:none">
+                
+                문서공유
+            </div>
+            <div class="c-box01 tabcontent" id="tab3" style="display:none">
+                <div class="audio">
+                    <div class="filebox">
+                        <div class="btn" onclick="document.querySelector('#file').click();">첨부파일</div>
+                        <div id="file_name">첨부파일이름</div>
+                        <input type="file" id="file" name="file" style="display:none" onchange="change(this)">
+                    </div>
+                </div>
+                오디오 공유
+            </div>
+            <div class="c-box01 tabcontent" id="tab4" style="display:none">
+                웹공유
+            </div>
+        </section>
+        <section id="section02">
+            <div class="tab-wrap">
+                <div class="sound">
+                    <div class="sound-btn"></div>
+                    <input type="range">
+                </div>
+                <div class="mic">
+                    <div class="mic-btn"></div>
+                    <input type="range">
+                </div>
+                <div class="rec">
+                    <div class="rec-box on">녹화중</div>
+                    <div class="rec-time">13:32</div>
+                </div>
+            </div>
+            <div class="student-wrap">
+                <div class="box">
+                    <video id="gum" playsinline autoplay muted></video>
+                </div>
+                <div class="box"></div>
+            </div>
+            <div class="chat-wrap">
+                <div class="title">채팅창</div>
+                <div class="chat">
+                    <div class="member">
+                        <div class="profile-name">
+                            <div class="profile"></div>
+                            <div class="name">profile name</div>
+                        </div>
+                        <div class="chatbox">Greg Abbott, the Republican governor of the
+                            country’s largest Republican-controlled
+                            state, is facing increasing pressure over his
+                            decision to open the economy.</div>
+                    </div>
+                    <div class="me">
+                        <div class="chatbox">Greg Abbott, the Republican governor of the
+                            country’s largest Republican-controlled </div>
+                    </div>
+                    <div class="messages">
+
+                    </div>
+                    <form class="footer" onsubmit="return false;">
+                        <input type="text" placeholder="Your message..">
+                        <button type="submit">Send</button>
+                    </form>
+                    <template data-template="message">
+                        <div class="message">
+                            <div class="message__name"></div>
+                            <div class="message__bubble"></div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="s-wrap">
+                <div class="file-share">
+                    <div class="title">파일공유리스트 (3)</div>
+                    <!--               파일 수 만큼 숫자변경 -->
+                    <div class="wrap">
+                        <div class="file">
+                            <p>과제01.jpg</p>
+                            <p>보기</p>
+                            <p>다운받기</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accessor">
+                    <div class="title">현재접속자리스트 (4/4)</div>
+                    <!--            접속자 수 만큼 변경-->
+                    <div class="wrap">
+                        <div class="user">
+                            <p>사용자1</p>
+                        </div>
+                        <div class="user">
+                            <p>사용자2</p>
+                        </div>
+                        <div class="user">
+                            <p>사용자3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+    
+    </footer>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="js/main.js" async></script>
+    <script src="js/ga.js"></script>
+    <script src="chat_script.js"></script>
+</body>
+<link rel="stylesheet" href="css/chat.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+
+<script>
+    $('input[type=range]').on('input', function() {
+        var val = $(this).val();
+        $(this).css('background', 'linear-gradient(to right, #3ebaae 0%, #3ebaae ' + val + '%, #d5d4d3 ' + val + '%, #d5d4d3 100%)');
+    });
+    
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tab");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" on", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " on";
+    }
+
+</script>
+<script>
+    function change(obj){
+        var str = obj.value;
+        var num = str.length;
+        var i = str.lastIndexOf("\\");
+        var index = str.substr(i + 1, num);
+        document.getElementById('file_name').innerHTML = index;
+        
+//        $.ajax();
+    }
+</script>
+</html>
