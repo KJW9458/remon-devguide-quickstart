@@ -242,7 +242,7 @@
 
     <script>
         const roomHash = location.hash.substring(1);
-        // alert(roomHash);
+
         const enterBtn = document.querySelector("#enterBtn");
         const otherVideos= document.getElementById('otherVideos');
         let remonCall;
@@ -355,8 +355,8 @@
             isConnected = true;
             document.querySelector('#enterBtn').innerHTML = "종료";
             remon = new Remon({ config, listener });
-            await remon.createRoom(""+roomHash+"");
-            let participants = await remon.fetchRooms(""+roomHash+"");
+            await remon.createRoom(roomHash);
+            let participants = await remon.fetchRooms(roomHash);
             participants.forEach(async function(participant){
                 if(!remonRoom[participant.id]){
                         remonRoom[participant.id] = true;
@@ -376,6 +376,7 @@
 
         enterBtn.addEventListener("click",
             evt => {
+                alert(roomHash);
             start();
             evt.preventDefault();
             },
