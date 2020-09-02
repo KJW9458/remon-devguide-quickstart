@@ -338,7 +338,7 @@
 
 
         async function start(r) {
-            alert(r);
+            // alert(r);
             if (isConnected) {
             isConnected = false;
             document.querySelector('#enterBtn').innerHTML = "시작";
@@ -356,8 +356,8 @@
             isConnected = true;
             document.querySelector('#enterBtn').innerHTML = "종료";
             remon = new Remon({ config, listener });
-            await remon.createRoom(r);
-            let participants = await remon.fetchRooms(r);
+            await remon.createRoom("remon");
+            let participants = await remon.fetchRooms("remon");
             participants.forEach(async function(participant){
                 if(!remonRoom[participant.id]){
                         remonRoom[participant.id] = true;
