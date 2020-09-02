@@ -261,6 +261,16 @@
                 // remote1: '#remoteVideo1',
                 // remote2: '#remoteVideo2',
                 local: '#localVideo'
+            },
+            media: {
+                video: {
+                    width: { min: 320, max: 640 },
+                    height: { min: 240, max: 480 },
+                    frameRate: { min: 8, max: 30 },
+                    maxBandwidth: 500,
+                    codec: 'H264'
+                },
+                audio: true
             }
         }
 
