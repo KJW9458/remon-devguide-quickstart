@@ -166,15 +166,27 @@
                 <div class="tab" onclick="openTab(event, 'tab4')">웹공유</div>
             </div>
             <div class="c-box01 tabcontent" id="tab1">
-                
-                <div class="row">
+                <div class="col-lg-5">
+                    <div class="mt-12 text-center">
+                      <span class="mr-2">
+                        <a
+                          id="enterBtn"
+                          href="#"
+                          class="btn btn-primary btn-user text-center"
+                        >
+                        ENTER
+                        </a>
+                      </span>
+                    </div>
+                </div>
+                <!-- <div class="row">
                     <div id="controlLeft" class="col-6 col-sm-6 col-md-6">
                         <button id="startCall">시작</button>
                     </div>
                     <div id="controlRight" class="col-6 col-sm-6 col-md-6">
                         <button id="stopCall">종료</button>
                     </div>
-                </div>
+                </div> -->
                 
 
             </div>
@@ -211,12 +223,7 @@
         </section>
         
     </main>
-    <div style="display:none">
-      <button id="start">Start camera</button>
-      <button id="record" disabled>Start Recording</button>
-      <button id="play" disabled>Play</button>
-      <button id="download" disabled>Download</button>
-    </div>
+
     <footer>
 
     </footer>
@@ -230,7 +237,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk"></script>
 
     <script>
-        const startCall = document.querySelector("#startCall");
+        const enterBtn = document.querySelector("#enterBtn");
         const otherVideos = document.getElementById('#otherVideos');
         let remonCall;
         let isConnected = false;
@@ -257,7 +264,6 @@
                             class : "remote-video center w-320 h-240",
                             autoplay : true,
                             muted : true,
-                            controls: true,
                             playsinline: true,
                             style :"z-index:1;background: rgba(0, 0, 0, 0.5); width: 300px;"
                           }
@@ -318,7 +324,7 @@
         async function start() {
             if (isConnected) {
             isConnected = false;
-            document.querySelector('#startCall').innerHTML = "시작";
+            document.querySelector('#enterBtn').innerHTML = "시작";
             Object.keys(remonRoom).forEach(function(id){
                 if( id !== remon.getChannelId()){
                 let video = document.getElementById(id.replace(":","-"));
@@ -331,7 +337,7 @@
             remon.close()
             } else {
             isConnected = true;
-            document.querySelector('#startCall').innerHTML = "종료";
+            document.querySelector('#enterBtn').innerHTML = "종료";
             remon = new Remon({ config, listener });
             await remon.createRoom("remon")
             let participants = await remon.fetchRooms("remon");
@@ -352,7 +358,7 @@
         }
 
 
-        startCall.addEventListener("click",
+        enterBtn.addEventListener("click",
             evt => {
             start();
             evt.preventDefault();
