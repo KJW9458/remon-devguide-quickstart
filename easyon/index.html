@@ -241,8 +241,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk"></script>
 
     <script>
-        var roomHash = location.hash.substring(1);
-
+        const roomHash = location.hash.substring(1);
+        alert(roomHash);
         const enterBtn = document.querySelector("#enterBtn");
         const otherVideos= document.getElementById('otherVideos');
         let remonCall;
