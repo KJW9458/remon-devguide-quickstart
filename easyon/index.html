@@ -79,11 +79,15 @@
                     <video id="localVideo" class="remote-video center w-300 h-300" muted autoplay playsinline></video>
                 </div>
                 <div class="box">
-                    <video id="remoteVideo1" class="remote" muted autoplay playsinline></video>
+                    <div class="row" style="width:250px;" id="otherVideos">
+                    </div>
+                    <!-- <video id="remoteVideo1" class="remote" muted autoplay playsinline></video> -->
                 </div>
-                <div class="box">
+                <!-- <div class="box">
+                    <div class="row" style="width:250px;" id="otherVideos">
+                    </div>
                     <video id="remoteVideo2" class="remote" muted autoplay playsinline></video>
-                </div>
+                </div> -->
             </div>
             <div class="chat-wrap">
                 <div class="title">채팅창</div>
@@ -227,6 +231,7 @@
 
     <script>
         const startCall = document.querySelector("#startCall");
+        const otherVideos = document.getElementById('#otherVideos');
         let remonCall;
         let isConnected = false;
         let remon;
@@ -526,4 +531,6 @@ $('.messages').scrollTop($('.messages').prop('scrollHeight'));
 
 <!-- Core plugin JavaScript-->
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
 </html>
