@@ -28,6 +28,16 @@ $(document).ready(function () {
     });
     
     
+    //  시작종료탭
+    $('#controlRight').hide()
+    $('#controlLeft').click(function(){
+       $('#controlLeft').hide()
+        $('#controlRight').show()        
+    });
+    $('#controlRight').click(function(){
+       $('#controlRight').hide()
+        $('#controlLeft').show()        
+    });
     
 });
 

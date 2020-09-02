@@ -62,9 +62,9 @@ button {
     border: 1px solid #aaa
 }
 
-/* input:focus {
+input:focus {
     border-color: 
-} */
+}
 
 /*input[type=range] { width:100%; -webkit-appearance: ; background: transparent; }*/
  input[type=range] {
@@ -77,6 +77,8 @@ button {
     transition: background 450ms ease-in;
     position: relative;
      top: -3px;
+     display: inline-block;
+     padding: 0;
   }
 
   input[type=range]:focus {
@@ -101,26 +103,14 @@ button {
     border-radius:50%;
     cursor: pointer;
   }
-/* textarea:focus {
+textarea:focus {
     border-color: 
-} */
-
-#localVideo{
-    background-color: gray;
-    object-fit: fill;
-    width: 250px;
-    height: 250px;
 }
 
-.remoteVideo{
-    background-color: gray;
-    object-fit: cover;
-    width: 250px;
-    height: 250px;
-}
+video{}
 
-/* footer {
-} */
+footer {
+}
 
 
 
@@ -182,19 +172,19 @@ button {
 /* main css */
 body{max-width: 100%;margin: 0 auto;display: block;padding: 0px 15px 30px}
 body::after{clear: both;content: '';display: block;}
-#section01{width: 49%;margin-right: 2%;float: left;margin-top: 20px;box-sizing: border-box}
+#section01{width: 38%;margin: 1%;float: left;margin-top: 20px;box-sizing: border-box}
 #section01 .tab-wrap{display: table;width: 100%;padding: 10px 0px;box-shadow: 1px 1px 5px rgba(0,0,0,0.065);border-radius: 5px;}
 #section01 .tab-wrap .tab{display: table-cell;text-align: center;color: #aaa;font-size: 14px;cursor: pointer}
 #section01 .tab-wrap .on{color: #3ebaae;font-weight: 700}
 
-#section01 .c-box01{width: 100%;padding-bottom: 100%;height: 0;background: #efefef;margin-top: 20px;border-radius: 5px;position: relative;}
+#section01 .c-box01{width: 100%;padding: 10px 10px 100%; height: 0;background: #efefef;margin-top: 20px;border-radius: 5px;position: relative;}
 #section01 .c-box01 .audio{position: absolute;top: 50%;transform: translate(-50%);left: 50%;width: 70%;padding: 5px;box-shadow: 1px 1px 5px rgba(0,0,0,0.065);border-radius: 5px; background: #fff;padding: 10px;}
 #section01 .c-box01 .audio .filebox{width: 100%;display: block;margin: 0 auto;display: -webkit-flex;display: -moz-flex;display: -ms-flex;display: -o-flex;display: flex;}
 #section01 .c-box01 .audio .filebox .btn{font-size: 14px;padding: 10px 15px;display: inline-block;color: #666;border-radius: 5px; background: #efefef;cursor: pointer}
 #section01 .c-box01 .audio .filebox div{font-size: 14px;padding: 10px 15px;display: inline-block;color: #333;border-radius: 5px;}
 
 
-#section02 {width: 49%;float: left;margin-top: 20px;box-sizing: border-box}
+#section02 {width: 58%;float: left;margin: 1.15%;box-sizing: border-box}
 #section02 .title{background: #3ebaae;color: #fff;font-weight: 700;padding: 10px 15px;border-radius: 5px 5px 0px 0px;font-size: 14px;position: relative;}
 #section02 .title::after{clear: both;content: '';display: block;position: absolute;top: 13px;right: 15px;width: 15px;height: 15px;background: url('../img/up-arrow.png');background-size: cover;background-repeat: no-repeat}
 #section02 .on::after{transform: rotate(180deg)}
@@ -215,11 +205,10 @@ body::after{clear: both;content: '';display: block;}
 
 #section02 .student-wrap{margin-top: 20px;}
 #section02 .student-wrap::after{clear: both;content: '';display: block;}
-#section02 .student-wrap .box:first-child{margin-right: 2%;}
-#section02 .student-wrap .box{width: 49%;height: 0;padding-bottom: 49%;background: #efefef;float: left;border-radius: 5px}
+#section02 .student-wrap .box{width: 31%;height: 0;padding-bottom: 31%;margin: 1.15%;background: #efefef;float: left;border-radius: 5px}
 
-#section02 .chat-wrap {width: 49%;float: left;margin-right: 2%;margin-top: 20px;}
-#section02 .chat-wrap .chat{position: relative;height: 300px;padding: 10px 10px 10px}
+#section02 .chat-wrap {width: 31%;float: left;margin: 1.15%}
+#section02 .chat-wrap .chat{position: relative;height: 300px;padding: 10px 10px 10px;box-shadow: 1px 1px 5px rgba(0,0,0,0.085)}
 #section02 .chat-wrap .chat .title{font-size: 14px}
 
 #section02 .chat-wrap .chat .member{}
@@ -236,22 +225,30 @@ display: flex;}
 #section02 .chat-wrap .chat .me .chatbox{font-size: 14px;box-shadow: 1px 1px 5px rgba(0,0,0,0.085);padding: 15px;background: #fff;color: #999;max-width: 100%;display: inline-block;margin-top: 5px;}
 
 
-#section02 .s-wrap{width: 49%;float: left;margin-top: 20px;border-radius: 5px;position: relative;}
-#section02 .s-wrap .file-share{box-shadow: 1px 1px 5px rgba(0,0,0,0.065)}
-#section02 .s-wrap .file-share .wrap{padding: 0px 10px;height: 100px;overflow-y: auto}
-#section02 .s-wrap .file-share .wrap .title{font-size: 14px;position: relative;}
-#section02 .s-wrap .file-share .wrap .title::after{clear: both;content: '';display: block;position: absolute;top: 0;right: 0;width: 20px;height: 20px;background: url('../img/down-arrow.png');background-size: cover;background-repeat: no-repeat}
-#section02 .s-wrap .file-share .wrap .file{display: table;padding: 7px 0px;border-bottom: 1px solid rgba(0,0,0,0.045);width: 100%;}
-#section02 .s-wrap .file-share .wrap .file p{display: table-cell;padding: 0px 10px;font-size: 12px;width: 15%;text-align: center;color: #aaa;cursor: pointer}
-#section02 .s-wrap .file-share .wrap .file p:first-child{width: 70%;font-size: 14px;text-align: left;color: #333;}
+#section02 {width: 49%;float: left;border-radius: 5px;position: relative;}
+#section02 .file-share{width: 31%;margin: 1.1%;box-shadow: 1px 1px 5px rgba(0,0,0,0.065);float: left;}
+#section02 .file-share .wrap{padding: 0px 10px;height: 300px;overflow-y: auto}
+#section02 .file-share .wrap .title{font-size: 14px;position: relative;}
+#section02 .file-share .wrap .title::after{clear: both;content: '';display: block;position: absolute;top: 0;right: 0;width: 20px;height: 20px;background: url('../img/down-arrow.png');background-size: cover;background-repeat: no-repeat}
+#section02 .file-share .wrap .file{display: table;padding: 7px 0px;border-bottom: 1px solid rgba(0,0,0,0.045);width: 100%;}
+#section02 .file-share .wrap .file p{display: table-cell;padding: 0px 10px;font-size: 12px;width: 15%;text-align: center;color: #aaa;cursor: pointer}
+#section02 .file-share .wrap .file p:first-child{width: 70%;font-size: 14px;text-align: left;color: #333;}
 
-#section02 .accessor {margin-top: 20px;box-shadow: 1px 1px 5px rgba(0,0,0,0.065)}
+#section02 .accessor {width: 31%;margin: 1.1%;box-shadow: 1px 1px 5px rgba(0,0,0,0.065);float: left;}
 #section02 .accessor .title{font-size: 14px}
-#section02 .accessor .wrap{padding: 0px 20px;height: 100px;overflow-y: auto}
+#section02 .accessor .wrap{padding: 0px 20px;height: 300px;overflow-y: auto}
 #section02 .accessor .wrap .user{border-bottom: 1px solid #eaeaea}
 #section02 .accessor .wrap .user p{font-size: 14px;margin: 0;padding: 7px 0px}
 
+
+#localvideo {width: 100%;padding-bottom: 100%;height: 0;object-fit: cover}
 /* responsive css */
+
+.row{
+    position: absolute !important;
+    bottom: 15px;
+    width: 100%;
+}
 
 @media (max-width:900px){
     

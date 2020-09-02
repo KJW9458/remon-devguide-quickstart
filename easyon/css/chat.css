@@ -28,24 +28,42 @@
         background: rgba(156, 172, 172, 0.2);
       }
       .footer {
-        line-height: 76px;
         border-top: 1px solid rgba(156, 172, 172, 0.2);
-        display: flex;
+        display: table;
         flex-shrink: 0;
+/*        position: absolute;*/
+        bottom: 0px;
+          
+          margin-bottom: 10px;
+
       }
+      .footer input{width: 70% !important;margin-top: 10px;}
       input {
-        height: 76px;
         border: none;
         flex-grow: 1;
-        padding: 0 30px;
+        padding: 5px 15px;
         font-size: 16px;
-        background: transparent;
+        background: #fff;
+        display: table-cell
       }
       button {
+          margin: 1%;
         border: none;
         background: transparent;
-        padding: 0 30px;
+        padding: 5px 10px;
         font-size: 16px;
         cursor: pointer;
+          display: table-cell;
+          background: rgba(0,0,0,0.085);
+          background: #aaa;
+          border-radius: 5px;
+          color: #333;
       }
+#startCall{
+    width: 100%; background: #fff; border-radius: 5px; padding: 10px;box-shadow: 1px 1px 5px rgba(0,0,0,0.085)
+}
+#stopCall{
+    width: 100%; background: #fff; border-radius: 5px; padding: 10px;box-shadow: 1px 1px 5px rgba(0,0,0,0.085)
+}
+
     </style>
