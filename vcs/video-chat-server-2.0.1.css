@@ -1,0 +1,11 @@
+.chat-display {
+	margin: 1em 0 0 0;
+	padding: 1em;
+	border: 1px solid grey;
+	min-height: 100px;
+}
+
+.display-data.notice {
+	color:blue;
+	font-weight: bold;
+}

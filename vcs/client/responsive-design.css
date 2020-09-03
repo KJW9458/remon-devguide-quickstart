@@ -1,0 +1,167 @@
+body {
+	margin:0 4px!important;
+	padding:0;
+}
+
+/* 상단 디자인 & 레이아웃 */
+.design-header {
+	position:relative;
+	padding-top: 4px;
+	border-bottom: 4px solid #DD0000;
+	background-color: white;
+}
+
+
+
+
+.design-header .logo {
+	padding: 6px;
+	background-color:#f9f9f9;
+	text-align:center;
+}
+.logo-inner {
+	padding: 4px;
+	font-size: 18px;
+}
+.logo-inner img {
+	margin-right: 6px;
+	width:100%;
+	max-width:219px;
+}
+.design-header .title {
+	text-align: center;
+}
+.title img {
+	width:100%;
+	max-width:168px;
+}
+
+.text.middle {
+	margin: 4px 0 0 0;
+}
+.text.bottom {
+	display:none;
+}
+
+.exchange>.why {
+	display:none;
+}
+
+.text-user-name {
+	padding: 4px 6px;
+	background-color:#3c7e25;
+	color:white;
+	border-radius: 2px;
+}
+[name='chat_user_name'] {
+	padding: 3px;
+	width:98%;
+}
+
+
+/* eo 상단 레이아웃 */
+
+
+
+
+.main-menu {
+	margin-bottom: 10px;
+	padding: 4px;
+	background-color: #efefef;
+	border-radius: 2px;
+	border:1px solid #dfdfdf;
+}
+.main-menu ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+
+.main-menu ul li > div {
+	padding: 4px 8px;
+	font-size: 1.2em;
+	cursor:pointer;
+}
+
+
+.exchange-desc, .how-to-desc {
+	display:none;
+	border: 1px solid grey;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.room-config {
+	display:none;
+}
+
+.design-room-config-wrapper {
+	border: 1px solid grey;
+	padding: 10px;
+	margin: 10px 0;
+}
+.design-room-config-wrapper input {
+	width: 90%;
+}
+
+
+.video-chat-lobby .chat-message {
+	height: 340px;
+}
+
+
+@media all and ( min-width: 350px ) {
+
+	.main-menu ul li > div {
+		padding: 6px 12px;
+	}
+	
+.main-menu .left {
+	float:left;
+}
+.main-menu .right {
+	float:right;
+}
+
+}
+@media all and ( min-width: 400px ) {
+	.exchange > .why {
+		display:inline;
+	}
+}
+@media all and ( min-width: 500px ) {
+	.design-header {
+		background-color: #f9f9f9;
+	}
+	.logo-inner img {
+		float:left;
+	}
+	.design-header .title {
+		float:right;
+		padding: 6px;
+	}
+	.text.middle {
+		display:none;
+	}
+	.text.bottom {
+		display:block;
+		margin: 8px 0;
+		font-size: 1.6em;
+		text-align:center;
+	}
+	
+}
+
+
+.video-chat.start .design-header,
+.video-chat.start .design-lobby-top,
+.video-chat.start .user-config,
+.video-chat.start .room-config {
+	display:none;
+}
+
+.video-chat.start .video-chat-lobby {
+	margin-top: 100px;
+}
+

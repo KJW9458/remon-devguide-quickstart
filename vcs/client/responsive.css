@@ -1,0 +1,314 @@
+body {
+	font-size: 9pt;
+}
+
+/* layout and width : 모든 레이아웃과 너비를 이곳에서 지정 */
+
+.video-chat {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.chat-box-wrapper, .room-list-wrapper {
+	width: 50%;
+	float:left;
+}
+
+
+
+
+
+/* video chat box : 채팅 박스 공용 스타일 */
+.chat-message {
+	padding: 4px;
+	overflow-y: auto;
+	color: #444444;
+	background-color: #faf2f6;
+	height: 160px;
+	border: 1px solid grey;
+}
+.on-whiteboard .chat-message {
+	height: 200px;
+}
+
+
+.separator {
+	display:inline-block;
+	padding: 0 4px;
+}
+
+.chat-message-line.you {
+	text-align:right;
+}
+
+
+
+.chat-box .chat-input {
+	position:relative;
+	margin-top: 2px;
+}
+
+.chat-box .chat-input [name='message'] {
+	margin:0;
+	padding:4px;
+	width:100%;
+	border: 1px solid blue;
+	border-right: 48px solid blue;
+	
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.chat-box .chat-input .send {
+	position:absolute;
+	display:inline-block;
+	top:0;
+	right:0;
+	margin:0;
+	padding:5px 8px;
+	color: white;
+	cursor:pointer;
+}
+
+/* lobby */
+.video-chat-lobby .chat-box {
+	margin-right: 4px;
+}
+[name='chat_room_max_no_of_user'] {
+	width: 40px;
+}
+
+/* room */
+.video-chat-room {
+	margin-top: 4px;
+}
+.video-chat-room .chat-box {
+	display:inline-block;
+	margin-top: 4px;
+	width:100%;
+}
+
+
+
+
+/* eo 채팅박스 */
+
+
+/* button */
+
+span.cbutton {
+	display:inline-block;
+	padding: 4px;
+	background-color: #494949;
+	color:white;
+	border: 1px solid grey;
+	cursor:pointer;
+}
+/* eo */
+
+
+/* lobby room list : 대기시 */
+.room-list .room {
+	margin: 0 0 4px 0;
+	padding: 8px;
+	border: 1px solid grey;
+}
+.room-name {
+	display:inline-block;
+	padding: 4px;
+	background-color: #ff9988;
+	color:blue;
+	font-size: 140%;
+	font-weight: bold;
+	cursor: pointer;
+}
+.room-user {
+	display:block;
+	padding: 8px 0 8px 16px;
+	background-color: #cdcdcd;
+}
+.room-user > .user {
+	display:inline-block;
+	margin: 4px;
+	padding: 4px;
+	border: 1px solid #898989;
+}
+.user-count {
+	display: inline-block;
+	padding: 0 1em;
+	font-weight:bold;
+}
+/* eo lobby room list */
+
+
+
+/* whiteboard */
+
+#white-board-wrapper {
+	position:absolute;
+	z-index:2001;
+}
+#white-board {
+	position:relative;
+}
+#white-board-iframe {
+	position:absolute;
+	z-index:2101;
+	top:0;
+	left:0;
+	border:0;
+	background-color: #efefef;
+}
+#white-board .menu {
+	position:absolute;
+	z-index:2201;
+}
+#white-board #canvas {
+	display:none;
+	border: 1px solid #cdcdcd;
+	position:absolute;
+	z-index:2190;
+	top:0;
+	left:0;
+	cursor: pointer;
+}
+
+#white-board-menu-open-popup {
+	border: 1px solid grey;
+	position:absolute;
+	z-index:2301;
+	background-color:white;
+}
+
+
+#white-board .menu .pen {
+	display:none;
+}
+
+#white-board .menu .type {
+	display:none;
+}
+
+#white-board .menu .color {
+	display:none;
+}
+
+#white-board .menu .eraser {
+	display:none;
+}
+
+#white-board .menu .clear {
+	display:none;
+}
+
+#white-board-iframe-open {
+	border: 0;
+}
+
+#white-board .menu {
+	top: -30px;
+	right: 0;
+}
+#white-board .menu span {
+	margin-left: 2px;
+}
+
+
+
+/* eo */
+
+
+
+/* video box and button : 비디오 박스와 버튼 */
+
+/* 비디오 박스 */
+#video-box {
+	margin-top: 6px;
+}
+
+/* 비디오 태그  */
+video {
+	display:block;
+	width:100%;
+}
+.slot {
+	position : relative;
+	width: 50%;
+	float:left;
+}
+.slot.me .name {
+	color: red;
+}
+.slot.me .kickout {
+	display: none;
+}
+
+
+
+.video-button {
+	position:absolute;
+	width: 100%;
+	bottom: 6px;
+}
+
+.video-button span {
+	display:inline-block;
+	padding: 2px 4px;
+	border-radius: 2px;
+	color: white;
+	background: rgba(200, 200, 200, 0.5);
+}
+.video-button .name {
+	margin-left: 10px;
+}
+
+.video-button .kickout {
+	float:right;
+	margin-right: 10px;
+	cursor:pointer;
+}
+
+
+/* 방장 표시 */
+.room-owner .name {
+	padding-left: 32px;
+	background: url('img/crown.png') 6% 50% no-repeat;
+	background-size: 18px 12px;
+	background-color: rgba(200, 200, 200, 0.5);
+}
+
+
+/* eo */
+
+
+
+
+/* on whiteboard open : 전자칠판을 오픈한 경우 디자인 */
+/* 중요 : 이 부분을 수정하면 전자칠판 오픈 시, 왼쪽 너비를 지정 할 수 있다. */
+.on-whiteboard  #video-box, .on-whiteboard .chat-box {
+	width: 200px;
+}
+
+.on-whiteboard  #video-box {
+}
+
+.on-whiteboard .slot {
+	float:none!important;
+	width:100%!important;
+}
+
+
+.on-whiteboard .chat-box {
+	margin-top: 6px;
+}
+
+.on-whiteboard .chat-message {
+}
+.on-whiteboard .chat-input {
+}
+.on-whiteboard [name='message'] {
+}
+.on-whiteboard .send {
+}

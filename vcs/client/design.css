@@ -1,0 +1,281 @@
+#video-chat-2 {
+	position:relative;
+	margin: 0;
+	padding: 0;
+	font-size:9pt;
+	font-family:Gulim;
+}
+
+
+span.cbutton {
+	margin:0;
+	padding:2px 4px;
+	
+	border-radius: 2px;
+}
+
+
+
+
+
+/* 화상회의실 레이아웃 */
+
+#video-chat-room {
+	width: 730px;
+}
+
+
+/* 대기실 */
+#lobby-chat-box {
+	float:left;
+	width: 220px;
+}
+
+#video-chat-enter-room {
+	margin: 12px 0 12px 0;
+}
+
+#room-list {
+	margin-left: 230px;
+}
+
+#lobby-chat-box .chat-message {
+	border:1px solid grey;
+	height: 320px;
+}
+
+#lobby-chat-box #chat-input {
+	position:relative;
+	margin-top: 4px;
+}
+
+#lobby-chat-box [name='message'] {
+	margin: 0;
+	padding: 1px 8px 1px 4px;
+	width: 168px;
+	height: 24px;
+}
+#lobby-chat-box .send {
+	position:absolute;
+	margin: 0;
+	border:0;
+	border-radius:0;
+}
+
+
+[name='chat_room_user_list'] {
+	width: 240px;
+}
+
+[name='chat_room_max_no_of_user'] {
+	width: 60px;
+}
+
+.room-user {
+	background-color: #efefef;
+}
+
+.room-name {
+	padding: 8px 0 8px 32px;
+	width: 400px;
+	background: url('img/mic.png') 10px 8px no-repeat;
+	background-color:#ffaa9c;
+}
+
+.room-user > .user {
+	padding: 4px 8px;
+	border: 1px solid #b9b9b9;
+	border-radius: 2px;
+}
+
+/* 화상 강의실 내 */
+#video-box:after {
+	display:block;
+	content:'';
+	clear:both;
+}
+
+
+#video-chat-room #chat-box {
+	margin-top: 6px;
+	border:0;
+}
+#video-chat-room .chat-message-wrapper {
+	margin-top: 6px;
+}
+#video-chat-room .chat-message {
+	padding: 6px;
+	height: 120px;
+	width:716px;
+	border: 1px solid grey;
+}
+
+#video-chat-room #chat-input {
+	position:relative;
+	margin-top: 4px;
+}
+
+#video-chat-room [name='message'] {
+	margin: 0;
+	padding: 1px 8px 1px 4px;
+	width:660px;
+	height: 24px;
+}
+#video-chat-room .send {
+	position:absolute;
+	padding: 8px 3px 0 3px;
+	width:48px;
+	height: 22px;
+	margin: 0;
+	border:0;
+	border-radius:0;
+}
+
+
+
+
+#video-chat-room-button span {
+	margin-right: 2px;
+}
+
+/* 비디오 박스 */
+#video-box {
+	margin-top: 6px;
+}
+
+/* 비디오 태그  */
+video {
+	display:block;
+	width:100%;
+}
+.slot {
+	position : relative;
+	width: 50%;
+	float:left;
+}
+.slot.me .name {
+	color: red;
+}
+.slot.me .kickout {
+	display: none;
+}
+
+
+
+.video-button {
+	position:absolute;
+	width: 100%;
+	bottom: 6px;
+}
+
+.video-button span {
+	display:inline-block;
+	padding: 2px 4px;
+	border-radius: 2px;
+	color: white;
+	background: rgba(200, 200, 200, 0.5);
+}
+.video-button .name {
+	margin-left: 10px;
+}
+
+.video-button .kickout {
+	float:right;
+	margin-right: 10px;
+	cursor:pointer;
+}
+
+
+
+/* 전자칠판 메뉴 */
+#white-board .menu {
+	top: 4px;
+	right: 4px;
+}
+#white-board .menu span {
+	margin-left: 2px;
+}
+
+
+
+#white-board-iframe {
+	border: 0;
+}
+
+
+/** 전자칠판 오픈 */
+.on-whiteboard  #video-box {
+	width: 240px;
+}
+
+.on-whiteboard .slot {
+	float:none!important;
+	width:100%!important;
+}
+
+
+.on-whiteboard .chat-box {
+	margin-top: 6px;
+	width: 240px;
+}
+
+.on-whiteboard .chat-message {
+	width:226px!important;
+}
+
+.on-whiteboard .chat-input {
+	width:240px;
+}
+
+.on-whiteboard [name='message'] {
+	width:178px!important;
+}
+.on-whiteboard .send {
+	width: 40px!important;
+}
+
+
+
+
+
+/* 방 메세지 */
+#room-message {
+	position:absolute;
+	top: 0;
+	right: 0;
+	padding: 8px;
+	background-color: grey;
+	color:white;
+}
+.room-message-room-name {
+	padding: 4px 8px !important;
+}
+
+
+
+::-webkit-input-placeholder {
+	color: #494949;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color: #494949;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	color: #494949;
+}
+
+:-ms-input-placeholder {  
+	color: #494949;
+	font-family:Gulim;
+	font-size:9pt;
+}
+
+
+/* 방장 표시 */
+.room-owner .name {
+	padding-left: 32px;
+	background: url('img/crown.png') 6% 50% no-repeat;
+	background-size: 18px 12px;
+	background-color: rgba(200, 200, 200, 0.5);
+}
