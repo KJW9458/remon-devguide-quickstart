@@ -241,7 +241,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk"></script>
 
     <script>
-        const roomHash = location.hash.substring(1);
+        // const roomHash = location.hash.substring(1);
 
         const enterBtn = document.querySelector("#enterBtn");
         const otherVideos= document.getElementById('otherVideos');
@@ -337,7 +337,7 @@
 
 
 
-        async function start(r) {
+        async function start() {
             // alert(r);
             if (isConnected) {
             isConnected = false;
@@ -377,7 +377,7 @@
 
         enterBtn.addEventListener("click",
             evt => {
-            start(roomHash);
+            start();
             evt.preventDefault();
             },
             false
