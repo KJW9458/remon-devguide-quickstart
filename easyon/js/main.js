@@ -8,12 +8,12 @@
 
 'use strict';
 
-const startButton = document.getElementById('startButton');
+// const startButton = document.getElementById('startButton');
 const callButton = document.getElementById('callButton');
 const hangupButton = document.getElementById('hangupButton');
 callButton.disabled = true;
 hangupButton.disabled = true;
-startButton.onclick = start;
+// startButton.onclick = start;
 callButton.onclick = call;
 hangupButton.onclick = hangup;
 
@@ -37,17 +37,17 @@ function gotStream(stream) {
   callButton.disabled = false;
 }
 
-function start() {
-  console.log('Requesting local stream');
-  startButton.disabled = true;
-  navigator.mediaDevices
-      .getUserMedia({
-        audio: true,
-        video: true
-      })
-      .then(gotStream)
-      .catch(e => console.log('getUserMedia() error: ', e));
-}
+// function start() {
+//   console.log('Requesting local stream');
+//   startButton.disabled = true;
+//   navigator.mediaDevices
+//       .getUserMedia({
+//         audio: true,
+//         video: true
+//       })
+//       .then(gotStream)
+//       .catch(e => console.log('getUserMedia() error: ', e));
+// }
 
 function call() {
   callButton.disabled = true;
