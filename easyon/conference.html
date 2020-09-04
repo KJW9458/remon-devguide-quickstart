@@ -27,7 +27,7 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet" />
   </head>
 
-  <body id="page-top">
+  <body id="page-top" onload="document.querySelector('#enterBtn').click()">
     <!-- Page Wrapper -->
     <div id="wrapper">
       <!-- Sidebar -->
@@ -115,6 +115,7 @@
                   <!-- Card Body -->
                   <div class="card-body">
                     <main class="text-center">
+                      <div style="width: 50px; height: 50px;background-color: white;"></div>
                       <video
                         id="myVideo"
                         class="remote-video center w-300 h-300"
