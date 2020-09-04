@@ -170,6 +170,12 @@
 
             const query = urlParams.get('type');
             // console.log(query);
+            const videoid;
+            if(query=="teacher"){
+              videoid = "#myVideo";
+            } else if(query=="student"){
+              videoid = "#otherVideos";
+            }
 
             const enterBtn = document.querySelector("#enterBtn");
             const otherVideos= document.getElementById('otherVideos');
@@ -189,7 +195,7 @@
             },
               view: {
                 //remote: "#remoteVideo",
-                local: "#myVideo"+query
+                local: videoid
               },
               media: {
                   video: {
