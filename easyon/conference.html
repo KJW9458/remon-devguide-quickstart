@@ -96,7 +96,8 @@
                   <!-- Card Body -->
                   <div class="card-body" style="position: relative;left: 595px;">
                     <main class="text-center">
-                      <div class="row" style="width:250px;" id="otherVideos">
+                     
+                      <div class="row" style=" width:250px;height:250px;background-color:white;" id="otherVideos">
                       </div>
                     </main>
                   </div>
@@ -115,7 +116,7 @@
                   <!-- Card Body -->
                   <div class="card-body">
                     <main class="text-center">
-                      <div style="width: 50px; height: 50px;background-color: white;"></div>
+                      <div style="width:250px;height:250px;background-color:white;position: fixed;"></div>
                       <video
                         id="myVideo"
                         class="remote-video center w-300 h-300"
@@ -162,6 +163,14 @@
           <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk"></script>
           <script>
+            const queryString = window.location.search;
+            console.log(queryString);
+
+            const urlParams = new URLSearchParams(queryString);
+
+            const query = urlParams.get('type');
+            console.log(query);
+
             const enterBtn = document.querySelector("#enterBtn");
             const otherVideos= document.getElementById('otherVideos');
             let isConnected = false;
