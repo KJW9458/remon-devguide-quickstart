@@ -162,6 +162,7 @@
           <!-- The webrtc adapter is required for browser compatibility -->
           <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk"></script>
+          <script src="chat_script.js"></script>
           <script>
             const queryString = window.location.search;
             // console.log(queryString);
@@ -199,10 +200,24 @@
               },
               media: {
                   video: {
-                      width: { min: 320, max: 640 },
-                      height: { min: 240, max: 480 },
-                      frameRate: { min: 8, max: 30 },
+                      width: { min: 300, max: 300 },
+                      height: { min: 300, max: 300 },
+                      frameRate: { min: 8, max: 18 },
                       maxBandwidth: 500,
+                      codec: 'H264'
+                  },
+                  audio: true
+              },
+              view_Teacher: {
+                //remote: "#remoteVideo",
+                local: "#myVideo"
+              },
+              media_Teacher: {
+                  video: {
+                      width: { min: 960, max: 960 },
+                      height: { min: 960, max: 960 },
+                      frameRate: { min: 8, max: 18 },
+                      maxBandwidth: 960,
                       codec: 'H264'
                   },
                   audio: true
