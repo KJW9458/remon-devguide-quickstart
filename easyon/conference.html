@@ -116,9 +116,9 @@
                   <!-- Card Body -->
                   <div class="card-body">
                     <main class="text-center">
-                      <div style="width:250px;height:250px;background-color:white;position: fixed;"></div>
+                      <!-- <div style="width:250px;height:250px;background-color:white;position: fixed;"></div> -->
                       <video
-                        id="myVideo"
+                        id="myVideoteacher"
                         class="remote-video center w-300 h-300"
                         autoplay
                         muted
@@ -164,12 +164,12 @@
           <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk"></script>
           <script>
             const queryString = window.location.search;
-            console.log(queryString);
+            // console.log(queryString);
 
             const urlParams = new URLSearchParams(queryString);
 
             const query = urlParams.get('type');
-            console.log(query);
+            // console.log(query);
 
             const enterBtn = document.querySelector("#enterBtn");
             const otherVideos= document.getElementById('otherVideos');
@@ -189,7 +189,7 @@
             },
               view: {
                 //remote: "#remoteVideo",
-                local: "#myVideo"
+                local: "#myVideo"+query
               },
               media: {
                   video: {
