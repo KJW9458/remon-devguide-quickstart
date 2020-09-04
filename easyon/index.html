@@ -318,7 +318,7 @@
                         Object.keys(videoAttrs).forEach(key => newVideo.setAttribute(key, videoAttrs[key]))
                         config.view.remote = `#${newVideo.id}`
                         newVideo.remon = new Remon({ config })
-                        otherVideos.appendChild(newVideo)
+                        otherVideos.append(newVideo)
                         newVideo.remon.joinCast(newVideo.id.replace("-",":"))
                     }
                     break;
@@ -366,7 +366,7 @@
                         Object.keys(videoAttrs).forEach(key => newVideo.setAttribute(key, videoAttrs[key]))
                         config.view.remote = `#${newVideo.id}`
                         newVideo.remon = new Remon({ config })
-                        otherVideos.appendChild(newVideo)
+                        otherVideos.append(newVideo)
                         await newVideo.remon.joinCast(newVideo.id.replace("-",":"));
                     }
             })
