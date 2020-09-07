@@ -137,8 +137,8 @@
                         <div class="messages">
                         </div>
                         <form class="footer" onsubmit="return false;" style="width: 100%;">
-                        <input type="text" placeholder="Your message.." onkeypress="if(event.keyCode==13){send();}">
-                            <button type="submit" id="send" onclick="send()">Send</button>
+                        <input type="text" placeholder="Your message.." onkeypress="if(event.keyCode==13){enter_send();}">
+                            <button type="submit" onclick="enter_send()">Send</button>
                         </form>
                         <template data-template="message">
                             <div class="message">
@@ -175,7 +175,11 @@
             </div>
           </div>
           <!-- /.container-fluid -->
-
+          <script>
+            function enter_send(){
+              $("#chat").scrollTop($("#chat").prop("scrollHeight"));
+            }
+          </script>
           <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
@@ -381,16 +385,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <script>
-      $(document).ready(function() {
-        // $("#accordionSidebar").load("nav.html");
-      });
-    </script>
-    <script>
-      function send(){
-        $("#chat").scrollTop($("#chat").prop("scrollHeight"));
-      }
-    </script>
+    
   </body>
 </html>
