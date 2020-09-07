@@ -128,7 +128,7 @@
                         playsinline
                         style="z-index:1;background: rgba(0, 0, 0, 0.5); width: 960px;height: 960px;"
                       ></video>
-                      <div class="chat" style="overflow-y:auto;position: absolute;bottom: 65px;background-color: white;height: 200px;width: 95%;">
+                      <div id="chat" class="chat" style="overflow-y:auto;position: absolute;bottom: 65px;background-color: white;height: 200px;width: 95%;">
                         <div class="member" id="message">
                             <div class="profile-name">
                             </div>
@@ -137,7 +137,7 @@
                         <div class="messages">
                         </div>
                         <form class="footer" onsubmit="return false;" style="width: 100%;">
-                            <input type="text" placeholder="Your message..">
+                        <input type="text" placeholder="Your message.." onkeypress="if(event.keyCode==13){send();}">
                             <button type="submit" id="send" onclick="send()">Send</button>
                         </form>
                         <template data-template="message">
@@ -389,7 +389,7 @@
     </script>
     <script>
       function send(){
-        $("#message").scrollTop($("#message").prop("scrollHeight"));
+        $("#chat").scrollTop($("#chat").prop("scrollHeight"));
       }
     </script>
   </body>
