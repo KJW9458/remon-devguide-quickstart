@@ -131,16 +131,13 @@
                       <div class="chat" style="overflow-y:auto;position: absolute;bottom: 65px;background-color: white;height: 200px;width: 95%;">
                         <div class="member" id="message">
                             <div class="profile-name">
-
                             </div>
-
                         </div>
 
                         <div class="messages">
-    
                         </div>
                         <form class="footer" onsubmit="return false;" style="width: 100%;">
-                            <input type="text" placeholder="Your message..">
+                            <input type="text" placeholder="Your message.." required>
                             <button type="submit" id="send" onclick="send()">Send</button>
                         </form>
                         <template data-template="message">
