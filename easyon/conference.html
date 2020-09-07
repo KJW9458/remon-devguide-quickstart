@@ -174,6 +174,7 @@
             
 
             const enterBtn = document.querySelector("#enterBtn");
+            const myVideo = document.getElementById('myVideo');
             const otherVideos= document.getElementById('otherVideos');
             let isConnected = false;
             let remon;
@@ -194,7 +195,7 @@
                 local: "#myVideo"
               },
               media: {
-                  #myVideo : {
+                  myVideo : {
                       width: { min: 960, max: 960 },
                       height: { min: 960, max: 960 },
                       frameRate: { min: 8, max: 18 },
