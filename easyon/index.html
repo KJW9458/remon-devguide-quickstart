@@ -241,6 +241,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk"></script>
     <script src="chat_script.js"></script>
     <script>
+        // const page_url = window.location.href;
+
+        // var i = page_url.indexOf("#");
+
+        // var pUrl = page_url.substr(0, i);
+
+        var pUrl = window.location.search;
+        console.log(pUrl);
+
         const roomHash = location.hash.substring(1);
 
         const enterBtn = document.querySelector("#enterBtn");
@@ -382,46 +391,6 @@
             },
             false
         );
-
-        // const listener = {
-        //     onConnect(chid) {
-        //         $('#channelId').text(chid);
-        //         $('#channelState').text("대기 중");
-        //         console.log(`onConnect: ${chid}`);
-        //     },
-        //     onComplete() {
-        //         $('#channelState').text("통화 중");
-        //         console.log(`onComplete`);
-        //     },
-        //     onClose() {
-        //         $('#channelState').text("통화 종료");
-        //         console.log(`onClose`);
-        //         remonCall.close();
-        //         if ($('#localVideo')[0].srcObject) {
-        //             $('#localVideo')[0].srcObject = undefined;
-        //         }
-        //         remonCall = new Remon({
-        //             config: config,
-        //             listener: listener
-        //         });
-        //     }
-        // }
-
-        // remonCall = new Remon({
-        //     config: config,
-        //     listener: listener
-        // });
-
-        // $('#startCall').click(function() {
-        //     // connectCall의 인자는 통화채널의 ID입니다. 실제 서비스에서는 동일한 통화채널의 ID가 아닌, 고유하고 예측이 어려운 ID를 사용해야합니다.
-        //     remonCall.connectCall('my-first-channel');
-        // });
-
-        // // "종료" 버튼을 클릭하면 통화채널에서 나갑니다.
-        // $('#stopCall').click(function() {
-        //     remonCall.close();
-        // });
-
     </script>
 
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
