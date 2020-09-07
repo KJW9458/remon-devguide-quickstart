@@ -25,6 +25,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/chat.css">
   </head>
 <!-- onload="document.querySelector('#enterBtn').click()" -->
   <body id="page-top">
@@ -127,7 +128,26 @@
                         playsinline
                         style="z-index:1;background: rgba(0, 0, 0, 0.5); width: 960px;height: 960px;"
                       ></video>
-
+                      
+                      <div class="chat" style="overflow-y:auto">
+                        <div class="member">
+                            <div class="profile-name">
+                            </div>
+                        </div>
+                        <div class="messages">
+    
+                        </div>
+                        <form class="footer" onsubmit="return false;">
+                            <input type="text" placeholder="Your message..">
+                            <button type="submit">Send</button>
+                        </form>
+                        <template data-template="message">
+                            <div class="message">
+                                <div class="message__name"></div>
+                                <div class="message__bubble"></div>
+                            </div>
+                        </template>
+                    </div>
                       <h6
                         id="waitingTv"
                         class="m-0 font-weight-bold text-primary"
@@ -164,7 +184,7 @@
           <!-- The webrtc adapter is required for browser compatibility -->
           <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk"></script>
-          <!-- <script src="chat_script.js"></script> -->
+          <script src="chat_script.js"></script>
           <script>
             const queryString = window.location.search;
             // console.log(queryString);
