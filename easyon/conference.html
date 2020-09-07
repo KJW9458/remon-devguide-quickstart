@@ -151,7 +151,7 @@
     
                         </div>
                         <form class="footer" onsubmit="return false;" style="width: 100%;">
-                            <input type="text" placeholder="Your message.." onkeypress="if(event.keyCode==13){document.querySelector('#send').click();}">
+                            <input type="text" placeholder="Your message..">
                             <button type="submit" id="send" onclick="send()">Send</button>
                         </form>
                         <template data-template="message">
@@ -170,7 +170,7 @@
                       </h6>
                       <div class="col-lg-5">
                         <div class="mt-12 text-center">
-                          <span class="mr-2">
+                          <span class="mr-2" style="float: left;">
                             <a
                               id="enterBtn"
                               href="#"
