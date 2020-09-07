@@ -82,6 +82,7 @@
 
             <!-- Content Row -->
             <div class="row">
+              
               <!-- <div class="col-xl-4 col-lg-5">
                 <div class="card shadow mb-4">
                   Card Header - Dropdown 
@@ -119,7 +120,7 @@
                       <!-- <div style="width:250px;height:250px;background-color:white;position: fixed;"></div> -->
                       <video
                         id="myVideo"
-                        class="remote-video center w-960 h-960"
+                        class="remote-video center w-300 h-300"
                         autoplay
                         muted
                         playsinline
@@ -171,10 +172,14 @@
 
             const query = urlParams.get('type');
             // console.log(query);
-            
+            var videoid;
+            if(query=="teacher"){
+              videoid = "#myVideo";
+            } else if(query=="student"){
+              videoid = "#otherVideos";
+            }
 
             const enterBtn = document.querySelector("#enterBtn");
-            const myVideo = document.getElementById('myVideo');
             const otherVideos= document.getElementById('otherVideos');
             let isConnected = false;
             let remon;
@@ -195,40 +200,29 @@
                 local: "#myVideo"
               },
               media: {
-                  myVideo : {
-                    video : {
+                  video: {
                       width: { min: 960, max: 960 },
                       height: { min: 960, max: 960 },
                       frameRate: { min: 8, max: 18 },
                       maxBandwidth: 500,
                       codec: 'H264'
-                    }
                   },
-                  otherVideos : {
-                    video : {
+                  audio: true
+              },
+              view_Teacher: {
+                //remote: "#remoteVideo",
+                local: "#otherVideos"
+              },
+              media_Teacher: {
+                  video: {
                       width: { min: 300, max: 300 },
                       height: { min: 300, max: 300 },
                       frameRate: { min: 8, max: 18 },
                       maxBandwidth: 500,
                       codec: 'H264'
-                    }
                   },
                   audio: true
-              },
-              // view_Teacher: {
-              //   //remote: "#remoteVideo",
-              //   local: "#myVideo"
-              // },
-              // media_Teacher: {
-              //     video: {
-              //         width: { min: 960, max: 960 },
-              //         height: { min: 960, max: 960 },
-              //         frameRate: { min: 8, max: 18 },
-              //         maxBandwidth: 960,
-              //         codec: 'H264'
-              //     },
-              //     audio: true
-              // }
+              }
             };
             const videoAttrs = {
                             class : "remote-video center w-320 h-240",
