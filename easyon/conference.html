@@ -128,8 +128,8 @@
                         playsinline
                         style="z-index:1;background: rgba(0, 0, 0, 0.5); width: 960px;height: 960px;"
                       ></video>
-                      <div class="chat" style="overflow-y:auto">
-                        <div class="member">
+                      <div class="chat" style="overflow-y:auto;position: absolute;bottom: 65px;background-color: white;height: 200px;width: 95%;">
+                        <div class="member" id="message">
                             <div class="profile-name">
     <!--                            <div class="profile"></div>-->
     <!--                            <div class="name">profile name</div>-->
@@ -150,9 +150,9 @@
                         <div class="messages">
     
                         </div>
-                        <form class="footer" onsubmit="return false;">
-                            <input type="text" placeholder="Your message..">
-                            <button type="submit">Send</button>
+                        <form class="footer" onsubmit="return false;" style="width: 100%;">
+                            <input type="text" placeholder="Your message.." onkeypress="if(event.keyCode==13){document.querySelector('#send').click();}">
+                            <button type="submit" id="send" onclick="send()">Send</button>
                         </form>
                         <template data-template="message">
                             <div class="message">
@@ -354,8 +354,6 @@
 
               }
             }
-
-
             enterBtn.addEventListener("click",
               evt => {
                 start();
@@ -363,9 +361,6 @@
               },
               false
             );
-
-
-
           </script>
         </div>
         <!-- End of Main Content -->
@@ -405,6 +400,11 @@
       $(document).ready(function() {
         // $("#accordionSidebar").load("nav.html");
       });
+    </script>
+    <script>
+      function send(){
+        $("#message").scrollTop($("#message")[0].scrollHeight);
+      }
     </script>
   </body>
 </html>
