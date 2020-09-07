@@ -170,7 +170,8 @@
                         const urlParams = new URLSearchParams(queryString);
 
                         const query = urlParams.get('type');
-                        console.log(query);
+                        // console.log(query);
+
                         var videoid;
                         if (query == "teacher") {
                             videoid = "#myVideo";
@@ -186,7 +187,9 @@
                         const key = "6e779e7ed3e3bf6301d6b49529863fa0ebea59b903f2972c5565ba12201edb34";
                         const serviceId = "ad1f48ee-4e50-4e45-9cb8-ce667a272173";
                         // please register your own service key from remotemonster site.
-                        let config = {
+                        let config;
+                        if(query=="teacher"){
+                          config = {
                             credential: {
                                 key: key,
                                 serviceId: serviceId,
@@ -216,11 +219,40 @@
                                 },
                                 audio: true
                             },
-                            // view_Teacher: {   remote: "#remoteVideo",   local: "#otherVideos" },
-                            // media_Teacher: {     video: {         width: { min: 300, max: 300 },
-                            // height: { min: 300, max: 300 },         frameRate: { min: 8, max: 18 },
-                            // maxBandwidth: 500,         codec: 'H264'     },     audio: true }
-                        };
+                          };
+                      } else {
+                        config = {
+                            credential: {
+                                key: key,
+                                serviceId: serviceId,
+                                wsurl: "wss://signal.remotemonster.com/ws",
+                                resturl: "https://signal.remotemonster.com/rest"
+                            },
+                            view: {
+                                //remote: "#remoteVideo",
+                                local: "#otherVideos"
+                            },
+                            media: {
+                                video: {
+                                    width: {
+                                        min: 300,
+                                        max: 300
+                                    },
+                                    height: {
+                                        min: 300,
+                                        max: 300
+                                    },
+                                    frameRate: {
+                                        min: 8,
+                                        max: 18
+                                    },
+                                    maxBandwidth: 500,
+                                    codec: 'H264'
+                                },
+                                audio: true
+                            },
+                          };
+                      }
                         const videoAttrs = {
                             class: "remote-video center w-200 h-200",
                             autoplay: true,
