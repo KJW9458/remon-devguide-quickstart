@@ -24,6 +24,7 @@
             src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="stylesheets/pinBoard.css">
         <link rel="stylesheet" href="css/chat.css">
     </head>
     <!-- onload="document.querySelector('#enterBtn').click()" -->
@@ -145,14 +146,35 @@
                                             </div>
                                         </main>
                                     </div>
-                                    <div class="tabcontent" id="tab2">
+                                    <div class="tabcontent" id="tab2" style="display:none;">
+                                        <div class="pinBoard"></div>
 
+                                        <script src="draw_js/jquery.min.js"></script>
+                                        <script src="draw_js/pinBoard.js"></script>
+
+                                        <script>
+                                            pinBoard();
+
+                                        </script>
                                     </div>
-                                    <div class="tabcontent" id="tab3">
-
+                                    <div class="tabcontent" id="tab3" style="display:none;">
+                                        <div class="audio">
+                                            <form method="post" enctype="multipart/form-data">
+                                                <div class="filebox">
+                                                    <div class="btn" onclick="document.querySelector('#file').click();">첨부파일</div>
+                                                    <div id="file_name">첨부파일이름</div>
+                                                    <input type="file" id="file" name="file" style="display:none" onchange="change(this)">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        오디오 공유
                                     </div>
-                                    <div class="tabcontent" id="tab4">
-
+                                    <div class="tabcontent" id="tab4" style="display:none;overflow-y: scroll;">
+                                        <div>
+                                            <input type="text" id="nsearch" name="nsearch" onkeydown="javascript:Enter_Check();">
+                                            <button id="nbtn" onclick="naver_btn()">검색</button>
+                                        </div>
+                                        <div id="naver"></div>
                                     </div>
                                 </div>
                             </div>
@@ -388,5 +410,82 @@
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " on";
         }
+    </script>
+    <script type="text/javascript">
+        function Enter_Check() {
+            // 엔터키의 코드는 13입니다.
+            if (event.keyCode == 13) {
+                document.querySelector('#nbtn').click();
+                return;
+            }
+        }
+    
+    </script>
+    <script>
+        function change(obj) {
+            var str = obj.value;
+            var num = str.length;
+            var i = str.lastIndexOf("\\");
+            var index = str.substr(i + 1, num);
+            document.getElementById('file_name').innerHTML = index;
+    
+            //        var form = $('#file')[0];
+    
+            var formData = new FormData();
+            formData.append('file', $('#file')[0].files[0]);
+    
+            $.ajax({
+                url: 'upload.php',
+                dataType: 'text',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: formData,
+                type: 'POST',
+                success: function(response) {
+                    console.log(response);
+                    $('#read').load('readdir.php');
+                },
+                error: function(error) {
+                    // alert(error);
+                }
+            });
+        }
+    
+    </script>
+    <script>
+        function naver_btn() {
+            var val = $('#nsearch').val();
+    
+            $.ajax({
+                url: "./search.php?query=" + val,
+                type: "POST",
+                dataType: "html",
+                data: {
+                    "query": val
+                },
+                cache: false,
+                success: function(data) {
+                    //                console.log(JSON.parse(data));
+                    var n = JSON.parse(data);
+                    //                console.log(n.items[0].title);
+                    var end = n.display;
+                    var content = "";
+                    $('#naver').html('');
+                    for (var i = n.start; i <= end; i++) {
+                        content += "<div>";
+                        content += "<div><img src='" + n.items[i].thumbnail + "' style='width:" + n.items[i].sizewidth + ";height:" + n.items[i].sizewidth + "'></div>";
+                        content += "<div>" + n.items[i].title + "</div>";
+                        //                    content += "<div>"+n.items[i].description+"</div>";
+                        content += "</div><br>";
+                        $('#naver').html(content);
+                    }
+                },
+                error: function(e) {
+                    console.log(e);
+                }
+            });
+        }
+    
     </script>
 </html>
