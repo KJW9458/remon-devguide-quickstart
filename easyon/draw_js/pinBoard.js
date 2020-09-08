@@ -49,7 +49,8 @@ var pinBoard = (function($) {
 		},
 
 		canvasTemplate : function() {
-			return '<canvas width="'+($('#section01').width()-40)+'" height="'+($('#section01').height()-120)+'"></canvas>';
+			// return '<canvas width="'+($('#section01').width()-40)+'" height="'+($('#section01').height()-120)+'"></canvas>';
+			return '<canvas width="960" height="960"></canvas>';
 		},
 
 		//Create Pinboard Canvas
@@ -202,7 +203,8 @@ var pinBoard = (function($) {
 	    },
 
 	    reDraw : function () {
-			context.clearRect ( 0 , 0 , ($('#section01').width()-40) , ($('#section01').height()-120));
+			// context.clearRect ( 0 , 0 , ($('#section01').width()-40) , ($('#section01').height()-120));
+			context.clearRect ( 0 , 0 , 960 , 960);
 
 		  	var pinCounts = pinPos.length,
 		  		pencilTraceCounts = pencilPos.length;
@@ -228,7 +230,8 @@ var pinBoard = (function($) {
 		},
 		//Clear Canvas and array
 		trashcan : function() {
-			context.clearRect ( 0 , 0 , ($('#section01').width()-40) , ($('#section01').height()-120));
+			// context.clearRect ( 0 , 0 , ($('#section01').width()-40) , ($('#section01').height()-120));
+			context.clearRect ( 0 , 0 , 960 , 960);
 			pinPos = [];
 			pencilPos = [];
 		},
