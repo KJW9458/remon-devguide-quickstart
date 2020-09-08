@@ -49,7 +49,7 @@
                             class="btn btn-link d-md-none rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <h3 class="h3 mb-4 text-gray-800">ConferenceCall Test</h3>
+                        <h3 class="h3 mb-4 text-gray-800"></h3>
                     </nav>
                     <!-- End of Topbar -->
 
@@ -173,20 +173,15 @@
                         // console.log(query);
 
                         const enterBtn = document.querySelector("#enterBtn");
-                        if(query == "teacher"){
-                          const otherVideos = document.getElementById('otherVideos');
-                        } else if(query == "student"){
-                          const otherVideos = document.getElementById('myVideo');
-                        }
+                        const otherVideos = document.getElementById('otherVideos');
+                        
                         let isConnected = false;
                         let remon;
                         let remonRoom = [];
                         const key = "6e779e7ed3e3bf6301d6b49529863fa0ebea59b903f2972c5565ba12201edb34";
                         const serviceId = "ad1f48ee-4e50-4e45-9cb8-ce667a272173";
                         // please register your own service key from remotemonster site.
-                        let config;
-                        if(query=="teacher"){
-                          config = {
+                        let config = {
                             credential: {
                                 key: key,
                                 serviceId: serviceId,
@@ -215,41 +210,9 @@
                                     codec: 'H264'
                                 },
                                 audio: true
-                            },
-                          };
-                      } else if(query=="student") {
-                        config = {
-                            credential: {
-                                key: key,
-                                serviceId: serviceId,
-                                wsurl: "wss://signal.remotemonster.com/ws",
-                                resturl: "https://signal.remotemonster.com/rest"
-                            },
-                            view: {
-                                //remote: "#remoteVideo",
-                                local: "#otherVideos"
-                            },
-                            media: {
-                                video: {
-                                    width: {
-                                        min: 300,
-                                        max: 300
-                                    },
-                                    height: {
-                                        min: 300,
-                                        max: 300
-                                    },
-                                    frameRate: {
-                                        min: 8,
-                                        max: 18
-                                    },
-                                    maxBandwidth: 500,
-                                    codec: 'H264'
-                                },
-                                audio: true
-                            },
-                          };
-                      }
+                            }
+                        };
+
                         const videoAttrs = {
                             class: "remote-video center w-200 h-200",
                             autoplay: true,
