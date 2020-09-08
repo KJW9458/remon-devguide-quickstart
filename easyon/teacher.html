@@ -42,10 +42,16 @@
                 <!-- Main Content -->
                 <div id="content">
                     <!-- Topbar -->
-                    <!-- <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4
-                    static-top shadow"> Sidebar Toggle (Topbar) <button id="sidebarToggleTop"
-                    class="btn btn-link d-md-none rounded-circle mr-3"> <i class="fa fa-bars"></i>
-                    </button> <h3 class="h3 mb-4 text-gray-800"></h3> </nav> -->
+                    <!-- <nav
+                        class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                         Sidebar Toggle (Topbar) 
+                        <button
+                            id="sidebarToggleTop"
+                            class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <h3 class="h3 mb-4 text-gray-800"></h3>
+                    </nav> -->
                     <!-- End of Topbar -->
 
                     <!-- Begin Page Content -->
@@ -80,109 +86,96 @@
                                         <div class="tab" onclick="openTab(event, 'tab3')">오디오공유</div>
                                         <div class="tab" onclick="openTab(event, 'tab4')">웹공유</div>
                                     </div>
-                                    <canvas>
-                                        <div class="card-body tabcontent" id="tab1">
-                                            <main class="text-center">
-                                                <div class="card-body" style="position: absolute;/*left: 595px;*/">
-                                                    <main class="text-center">
+                                    <div class="card-body tabcontent" id="tab1">
+                                        <main class="text-center">
+                                            <div class="card-body" style="position: absolute;/*left: 595px;*/">
+                                                <main class="text-center">
 
-                                                        <div
-                                                            class="row"
-                                                            style=" width:200px;height:200px;background-color:rgb(255, 255, 255);"
-                                                            id="otherVideos"></div>
-                                                    </main>
+                                                    <div
+                                                        class="row"
+                                                        style=" width:200px;height:200px;background-color:rgb(255, 255, 255);"
+                                                        id="otherVideos"></div>
+                                                </main>
+                                            </div>
+                                            <!-- <div style="width:250px;height:250px;background-color:white;position:
+                                            fixed;"></div> -->
+                                            <video
+                                                id="myVideo"
+                                                class="remote-video center w-300 h-300"
+                                                autoplay="autoplay"
+                                                muted="muted"
+                                                playsinline="playsinline"
+                                                style="z-index:1;background: rgba(0, 0, 0, 0.5); width: 960px;height: 960px;"></video>
+                                            <div
+                                                id="chat"
+                                                class="chat"
+                                                style="overflow-y:auto;position: absolute;bottom: 65px;background-color: white;height: 200px;width: 95%;">
+                                                <div class="member" id="message">
+                                                    <div class="profile-name"></div>
                                                 </div>
-                                                <!-- <div style="width:250px;height:250px;background-color:white;position:
-                                                fixed;"></div> -->
-                                                <video
-                                                    id="myVideo"
-                                                    class="remote-video center w-300 h-300"
-                                                    autoplay="autoplay"
-                                                    muted="muted"
-                                                    playsinline="playsinline"
-                                                    style="z-index:1;background: rgba(0, 0, 0, 0.5); width: 960px;height: 960px;"></video>
-                                                <div
-                                                    id="chat"
-                                                    class="chat"
-                                                    style="overflow-y:auto;position: absolute;bottom: 65px;background-color: white;height: 200px;width: 95%;">
-                                                    <div class="member" id="message">
-                                                        <div class="profile-name"></div>
-                                                    </div>
 
-                                                    <div class="messages"></div>
-                                                    <form class="footer" onsubmit="return false;" style="width: 100%;">
-                                                        <input
-                                                            type="text"
-                                                            placeholder="Your message.."
-                                                            onkeypress="if(event.keyCode==13){enter_send();}">
-                                                        <button type="submit" onclick="enter_send()">Send</button>
-                                                    </form>
-                                                    <template data-template="message">
-                                                        <div class="message">
-                                                            <div class="message__name"></div>
-                                                            <div class="message__bubble"></div>
-                                                        </div>
-                                                    </template>
-                                                </div>
-                                                <h6
-                                                    id="waitingTv"
-                                                    class="m-0 font-weight-bold text-primary"
-                                                    style="z-index:3; position: absolute;bottom: 55px;right:45px; visibility: hidden;">
-                                                    waiting
-                                                </h6>
-                                                <div class="col-lg-5">
-                                                    <div class="mt-12 text-center">
-                                                        <span class="mr-2" style="float: left;">
-                                                            <a id="enterBtn" href="#" class="btn btn-primary btn-user text-center">
-                                                                ENTER
-                                                            </a>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </main>
-                                        </div>
-                                        <div class="tabcontent" id="tab2" style="display:none;height: 1000px;">
-                                            <div class="pinBoard"></div>
-
-                                            <script src="draw_js/jquery.min.js"></script>
-                                            <script src="draw_js/pinBoard.js"></script>
-
-                                            <script>
-                                                pinBoard();
-                                            </script>
-                                        </div>
-                                        <div class="tabcontent" id="tab3" style="display:none;height: 1000px;">
-                                            <div class="audio">
-                                                <form method="post" enctype="multipart/form-data">
-                                                    <div class="filebox">
-                                                        <div class="btn" onclick="document.querySelector('#file').click();">첨부파일</div>
-                                                        <div id="file_name">첨부파일이름</div>
-                                                        <input
-                                                            type="file"
-                                                            id="file"
-                                                            name="file"
-                                                            style="display:none"
-                                                            onchange="change(this)">
-                                                    </div>
+                                                <div class="messages"></div>
+                                                <form class="footer" onsubmit="return false;" style="width: 100%;">
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Your message.."
+                                                        onkeypress="if(event.keyCode==13){enter_send();}">
+                                                    <button type="submit" onclick="enter_send()">Send</button>
                                                 </form>
+                                                <template data-template="message">
+                                                    <div class="message">
+                                                        <div class="message__name"></div>
+                                                        <div class="message__bubble"></div>
+                                                    </div>
+                                                </template>
                                             </div>
-                                            오디오 공유
-                                        </div>
-                                        <div
-                                            class="tabcontent"
-                                            id="tab4"
-                                            style="display:none;overflow-y: scroll;height: 1000px;">
-                                            <div>
-                                                <input
-                                                    type="text"
-                                                    id="nsearch"
-                                                    name="nsearch"
-                                                    onkeydown="javascript:Enter_Check();">
-                                                <button id="nbtn" onclick="naver_btn()">검색</button>
+                                            <h6
+                                                id="waitingTv"
+                                                class="m-0 font-weight-bold text-primary"
+                                                style="z-index:3; position: absolute;bottom: 55px;right:45px; visibility: hidden;">
+                                                waiting
+                                            </h6>
+                                            <div class="col-lg-5">
+                                                <div class="mt-12 text-center">
+                                                    <span class="mr-2" style="float: left;">
+                                                        <a id="enterBtn" href="#" class="btn btn-primary btn-user text-center">
+                                                            ENTER
+                                                        </a>
+                                                    </span>
+                                                </div>
                                             </div>
-                                            <div id="naver"></div>
+                                        </main>
+                                    </div>
+                                    <div class="tabcontent" id="tab2" style="display:none;height: 1000px;">
+                                        <div class="pinBoard"></div>
+
+                                        <script src="draw_js/jquery.min.js"></script>
+                                        <script src="draw_js/pinBoard.js"></script>
+
+                                        <script>
+                                            pinBoard();
+
+                                        </script>
+                                    </div>
+                                    <div class="tabcontent" id="tab3" style="display:none;height: 1000px;">
+                                        <div class="audio">
+                                            <form method="post" enctype="multipart/form-data">
+                                                <div class="filebox">
+                                                    <div class="btn" onclick="document.querySelector('#file').click();">첨부파일</div>
+                                                    <div id="file_name">첨부파일이름</div>
+                                                    <input type="file" id="file" name="file" style="display:none" onchange="change(this)">
+                                                </div>
+                                            </form>
                                         </div>
-                                    </canvas>
+                                        오디오 공유
+                                    </div>
+                                    <div class="tabcontent" id="tab4" style="display:none;overflow-y: scroll;height: 1000px;">
+                                        <div>
+                                            <input type="text" id="nsearch" name="nsearch" onkeydown="javascript:Enter_Check();">
+                                            <button id="nbtn" onclick="naver_btn()">검색</button>
+                                        </div>
+                                        <div id="naver"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +204,7 @@
 
                         const enterBtn = document.querySelector("#enterBtn");
                         const otherVideos = document.getElementById('otherVideos');
-
+                        
                         let isConnected = false;
                         let remon;
                         let remonRoom = [];
@@ -255,8 +248,7 @@
                             autoplay: true,
                             muted: true,
                             playsinline: true,
-                            style: "z-index:1;background: rgba(0, 0, 0, 0.5); width: 200px;height: 200px; object-f" +
-                                    "it: cover;"
+                            style: "z-index:1;background: rgba(0, 0, 0, 0.5); width: 200px;height: 200px; object-fit: cover;"
                         }
 
                         const listener = {
@@ -376,7 +368,7 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <a href="https://remotemonster.com">teacher</a>
+                                <a href="https://remotemonster.com">teacher</a>
                         </div>
                     </div>
                 </footer>
@@ -400,26 +392,20 @@
         <!-- Custom scripts for all pages-->
         <script src="js/sb-admin-2.min.js"></script>
 
+        
     </body>
     <script>
         function openTab(evt, tabName) {
-            var i,
-                tabcontent,
-                tablinks;
+            var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
             tablinks = document.getElementsByClassName("tab");
             for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i]
-                    .className
-                    .replace(" on", "");
+                tablinks[i].className = tablinks[i].className.replace(" on", "");
             }
-            document
-                .getElementById(tabName)
-                .style
-                .display = "block";
+            document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " on";
         }
     </script>
@@ -427,12 +413,11 @@
         function Enter_Check() {
             // 엔터키의 코드는 13입니다.
             if (event.keyCode == 13) {
-                document
-                    .querySelector('#nbtn')
-                    .click();
+                document.querySelector('#nbtn').click();
                 return;
             }
         }
+    
     </script>
     <script>
         function change(obj) {
@@ -440,15 +425,13 @@
             var num = str.length;
             var i = str.lastIndexOf("\\");
             var index = str.substr(i + 1, num);
-            document
-                .getElementById('file_name')
-                .innerHTML = index;
-
+            document.getElementById('file_name').innerHTML = index;
+    
             //        var form = $('#file')[0];
-
+    
             var formData = new FormData();
             formData.append('file', $('#file')[0].files[0]);
-
+    
             $.ajax({
                 url: 'upload.php',
                 dataType: 'text',
@@ -457,20 +440,21 @@
                 processData: false,
                 data: formData,
                 type: 'POST',
-                success: function (response) {
+                success: function(response) {
                     console.log(response);
                     $('#read').load('readdir.php');
                 },
-                error: function (error) {
+                error: function(error) {
                     // alert(error);
                 }
             });
         }
+    
     </script>
     <script>
         function naver_btn() {
             var val = $('#nsearch').val();
-
+    
             $.ajax({
                 url: "./search.php?query=" + val,
                 type: "POST",
@@ -479,7 +463,7 @@
                     "query": val
                 },
                 cache: false,
-                success: function (data) {
+                success: function(data) {
                     //                console.log(JSON.parse(data));
                     var n = JSON.parse(data);
                     //                console.log(n.items[0].title);
@@ -488,25 +472,18 @@
                     $('#naver').html('');
                     for (var i = n.start; i <= end; i++) {
                         content += "<div>";
-                        content += "<div><img src='" + n
-                            .items[i]
-                            .thumbnail + "' style='width:" + n
-                            .items[i]
-                            .sizewidth + ";height:" + n
-                            .items[i]
-                            .sizewidth + "'></div>";
-                        content += "<div>" + n
-                            .items[i]
-                            .title + "</div>";
+                        content += "<div><img src='" + n.items[i].thumbnail + "' style='width:" + n.items[i].sizewidth + ";height:" + n.items[i].sizewidth + "'></div>";
+                        content += "<div>" + n.items[i].title + "</div>";
                         //                    content += "<div>"+n.items[i].description+"</div>";
                         content += "</div><br>";
                         $('#naver').html(content);
                     }
                 },
-                error: function (e) {
+                error: function(e) {
                     console.log(e);
                 }
             });
         }
+    
     </script>
 </html>
