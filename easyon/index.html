@@ -62,11 +62,11 @@
             <div class="tab-wrap">
                 <div class="sound">
                     <div class="sound-btn"></div>
-                    <input type="range" name="sound" class="volume" min="0" max="100" onchange="vChange('sound', this.value)">
+                    <input type="range" name="sound" class="volume" min="0" max="1" step="0.1" value="0.5" onchange="vChange('sound', this.value)">
                 </div>
                 <div class="mic">
                     <div class="mic-btn"></div>
-                    <input type="range" name="mic" class="volume" min="0" max="100" onchange="vChange('mic', this.value)">
+                    <input type="range" name="mic" class="volume" min="0" max="1" step="0.1" value="0.5" onchange="vChange('mic', this.value)">
                 </div>
                 <div class="rec">
                     <div class="rec-box on">녹화중</div>
