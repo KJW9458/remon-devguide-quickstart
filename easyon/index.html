@@ -146,7 +146,7 @@
                 
             </div>
             <div class="accessor">
-                    <div class="title">현재접속자리스트 (4/4)</div>
+                    <div class="title" id="join_user">현재접속자리스트 (4/4)</div>
                     <!--            접속자 수 만큼 변경-->
                     <div class="wrap">
                         <div class="user">
@@ -241,6 +241,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk"></script>
     <script src="chat_script.js"></script>
     <script>
+        var cnt = 0;
         const roomHash = location.hash.substring(1);
 
         const enterBtn = document.querySelector("#enterBtn");
@@ -341,6 +342,7 @@
         async function start(r) {
             // alert(r);
             if (isConnected) {
+                cnt--;
             isConnected = false;
             document.querySelector('#enterBtn').innerHTML = "시작";
             Object.keys(remonRoom).forEach(function(id){
@@ -352,9 +354,11 @@
                 }
                 delete remonRoom[id];
             })
+            document.getElementById('join_user').innerHTML = "현재접속자리스트 ("+cnt+"/4)";
             remon.close()
             } else {
             isConnected = true;
+            cnt++;
             document.querySelector('#enterBtn').innerHTML = "종료";
             remon = new Remon({ config, listener });
             await remon.createRoom(r);
@@ -371,7 +375,7 @@
                         await newVideo.remon.joinCast(newVideo.id.replace("-",":"));
                     }
             })
-
+            document.getElementById('join_user').innerHTML = "현재접속자리스트 ("+cnt+"/4)";
             }
         }
 
