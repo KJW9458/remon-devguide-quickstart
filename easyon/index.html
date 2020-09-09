@@ -277,6 +277,7 @@
         }
 
         const videoAttrs = {
+                            id : "other",
                             class : "remote-video center w-320 h-240",
                             autoplay : true,
                             muted : true,
@@ -538,10 +539,11 @@ $('.messages').scrollTop($('.messages').prop('scrollHeight'));
 </script>
 <script>
     function vChange(t, v){
+        
         if(t=="sound"){
-            
+            document.querySelector("video").volume = v;
         } else if(t=="mic"){
-             
+            
         }
         
         $('.test').text(t+" "+v);
