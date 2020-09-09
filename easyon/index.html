@@ -70,7 +70,7 @@
                 </div>
                 <div class="rec">
                     <div class="rec-box on">녹화중</div>
-                    <div id="time" class="rec-time">13:32</div>
+                    <div id="time" class="rec-time"></div>
                     <div class="test"></div>
                 </div>
             </div>
@@ -442,7 +442,12 @@
 
     var x = setInterval(function() {
         min = parseInt(time/60);
-        sec = time%60;
+        if((time%60)<10){
+            sec = "0"+time%60;
+        } else {
+            sec = time%60;
+        }
+        
 
         document.getElementById('time').innerHTML = min + " : " + sec;
         time--;
