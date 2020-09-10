@@ -19,7 +19,7 @@ const abortButton = document.querySelector('button#abortButton');
 // const downloadAnchor = document.querySelector('a#download');
 const sendProgress = document.querySelector('progress#sendProgress');
 const receiveProgress = document.querySelector('progress#receiveProgress');
-const statusMessage = document.querySelector('span#status');
+// const statusMessage = document.querySelector('span#status');
 const sendFileButton = document.querySelector('button#sendFile');
 
 let receiveBuffer = [];
@@ -92,11 +92,11 @@ function sendData() {
   console.log(`File is ${[file.name, file.size, file.type, file.lastModified].join(' ')}`);
 
   // Handle 0 size files.
-  statusMessage.textContent = '';
+//   statusMessage.textContent = '';
 //   downloadAnchor.textContent = '';
   if (file.size === 0) {
     bitrateDiv.innerHTML = '';
-    statusMessage.textContent = 'File is empty, please select a non-empty file';
+    // statusMessage.textContent = 'File is empty, please select a non-empty file';
     closeDataChannels();
     return;
   }
