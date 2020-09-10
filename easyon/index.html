@@ -141,7 +141,7 @@
                             <p>다운받기</p>
                         </div>
 -->
-                        <?php include 'readdir.php'?>
+                        <!-- <?php include 'readdir.php'?> -->
                     </div>
                 
             </div>
@@ -199,11 +199,13 @@
             </div>
             <div class="c-box01 tabcontent" id="tab3" style="display:none">
                 <div class="audio">
-                    <form method="post" enctype="multipart/form-data">
+                    <form id="fileInfo" method="post" enctype="multipart/form-data">
                         <div class="filebox">
                             <div class="btn" onclick="document.querySelector('#file').click();">첨부파일</div>
                             <div id="file_name">첨부파일이름</div>
-                            <input type="file" id="file" name="file" style="display:none" onchange="change(this)">
+                            <input type="file" id="fileInput" name="files" style="display:none" onchange="change(this)">
+                            <button disabled id="sendFile">Send</button>
+                            <button disabled id="abortButton">Abort</button>
                         </div>
                     </form>
                 </div>
@@ -432,6 +434,7 @@
 
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="js/main.js" async></script>
+    <script src="js/file_main.js"></script>
     <!--    <script src="https://github.com/webrtc/samples/blob/gh-pages/src/js/lib/ga.js"></script>-->
     <script src="js/ga.js"></script>
     
@@ -495,25 +498,25 @@
 
         //        var form = $('#file')[0];
 
-        var formData = new FormData();
-        formData.append('file', $('#file')[0].files[0]);
+        // var formData = new FormData();
+        // formData.append('file', $('#file')[0].files[0]);
 
-        $.ajax({
-            url: 'upload.php',
-            dataType: 'text',
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: formData,
-            type: 'POST',
-            success: function(response) {
-                console.log(response);
-                $('#read').load('readdir.php');
-            },
-            error: function(error) {
-                alert(error);
-            }
-        });
+        // $.ajax({
+        //     url: 'upload.php',
+        //     dataType: 'text',
+        //     cache: false,
+        //     contentType: false,
+        //     processData: false,
+        //     data: formData,
+        //     type: 'POST',
+        //     success: function(response) {
+        //         console.log(response);
+        //         $('#read').load('readdir.php');
+        //     },
+        //     error: function(error) {
+        //         alert(error);
+        //     }
+        // });
     }
 
 </script>
