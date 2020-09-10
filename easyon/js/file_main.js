@@ -16,7 +16,7 @@ let fileReader;
 // const bitrateDiv = document.querySelector('div#bitrate');
 const fileInput = document.querySelector('input#fileInput');
 const abortButton = document.querySelector('button#abortButton');
-const downloadAnchor = document.querySelector('a#download');
+// const downloadAnchor = document.querySelector('a#download');
 const sendProgress = document.querySelector('progress#sendProgress');
 const receiveProgress = document.querySelector('progress#receiveProgress');
 const statusMessage = document.querySelector('span#status');
@@ -93,7 +93,7 @@ function sendData() {
 
   // Handle 0 size files.
   statusMessage.textContent = '';
-  downloadAnchor.textContent = '';
+//   downloadAnchor.textContent = '';
   if (file.size === 0) {
     bitrateDiv.innerHTML = '';
     statusMessage.textContent = 'File is empty, please select a non-empty file';
@@ -172,12 +172,12 @@ function receiveChannelCallback(event) {
 
   receivedSize = 0;
   bitrateMax = 0;
-  downloadAnchor.textContent = '';
-  downloadAnchor.removeAttribute('download');
-  if (downloadAnchor.href) {
-    URL.revokeObjectURL(downloadAnchor.href);
-    downloadAnchor.removeAttribute('href');
-  }
+//   downloadAnchor.textContent = '';
+//   downloadAnchor.removeAttribute('download');
+//   if (downloadAnchor.href) {
+//     URL.revokeObjectURL(downloadAnchor.href);
+//     downloadAnchor.removeAttribute('href');
+//   }
 }
 
 function onReceiveMessageCallback(event) {
@@ -194,11 +194,11 @@ function onReceiveMessageCallback(event) {
     const received = new Blob(receiveBuffer);
     receiveBuffer = [];
 
-    downloadAnchor.href = URL.createObjectURL(received);
-    downloadAnchor.download = file.name;
-    downloadAnchor.textContent =
-      `Click to download '${file.name}' (${file.size} bytes)`;
-    downloadAnchor.style.display = 'block';
+    // downloadAnchor.href = URL.createObjectURL(received);
+    // downloadAnchor.download = file.name;
+    // downloadAnchor.textContent =
+    //   `Click to download '${file.name}' (${file.size} bytes)`;
+    // downloadAnchor.style.display = 'block';
 
     const bitrate = Math.round(receivedSize * 8 /
       ((new Date()).getTime() - timestampStart));
