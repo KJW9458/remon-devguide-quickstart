@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8“>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>홈페이지 이름</title>
+    <title>이지온</title>
     <meta name="description" content="홈페이지 소개">
     <meta property="og:type" content="website" />
     <meta property="og:image" content="img/opengraph-img.jpg" />
@@ -53,7 +53,8 @@
     <link rel="stylesheet" href="stylesheets/pinBoard.css">
 
 </head>
-
+<style>
+    .col-lg-5{max-width: 100%}</style>
 <body>
     <header>
     </header>

@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8“>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>홈페이지 이름</title>
+    <title>이지온</title>
     <meta name="description" content="홈페이지 소개">
     <meta property="og:type" content="website" />
     <meta property="og:image" content="img/opengraph-img.jpg" />
@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
 
@@ -53,25 +53,36 @@
     <link rel="stylesheet" href="stylesheets/pinBoard.css">
 
 </head>
+<style>
+    .col-lg-5 {
+        max-width: 100%
+    }
+
+</style>
 
 <body>
     <header>
     </header>
     <main>
-       <section id="section02">
+        <section id="section02">
             <div class="tab-wrap">
                 <div class="sound">
                     <div class="sound-btn"></div>
-                    <input type="range" name="sound" class="volume" min="0" max="1" step="0.1" value="0.5" onchange="vChange('sound', this.value)">
+                    <input type="range" name="sound" class="volume" min="1" max="100" step="1" value="1" onchange="vChange('sound', this.value)">
                 </div>
                 <div class="mic">
                     <div class="mic-btn"></div>
-                    <input type="range" name="mic" class="volume" min="0" max="1" step="0.1" value="0.5" onchange="vChange('mic', this.value)">
+                    <input type="range" name="mic" class="volume" min="1" max="100" step="1" value="1" onchange="vChange('mic', this.value)">
                 </div>
-                <div class="rec">
-                    <div class="rec-box on">녹화중</div>
-                    <div id="time" class="rec-time"></div>
-                    <div class="test"></div>
+
+                <div class="col-lg-5" style="max-width:100%">
+                    <div class="mt-12 text-center">
+                        <span class="mr-2">
+                            <a id="enterBtn" href="#" class="btn btn-primary btn-user text-center" style="width: 100%;color: #fff;margin-top: 10px;background:#3ebaae; border: 1px solid #3ebaae">
+                                시작하기
+                            </a>
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="student-wrap">
@@ -81,10 +92,10 @@
                 <div class="box">
                     <div class="card-body">
                         <main class="text-center">
-                          <div class="row" style="width:250px;" id="otherVideos">
-                          </div>
+                            <div class="row" style="width:250px;" id="otherVideos">
+                            </div>
                         </main>
-                      </div>
+                    </div>
                     <!-- <video id="remoteVideo1" class="remote" muted autoplay playsinline></video> -->
                 </div>
                 <!-- <div class="box">
@@ -98,17 +109,17 @@
                 <div class="chat" style="overflow-y:auto">
                     <div class="member">
                         <div class="profile-name">
-<!--                            <div class="profile"></div>-->
-<!--                            <div class="name">profile name</div>-->
+                            <!--                            <div class="profile"></div>-->
+                            <!--                            <div class="name">profile name</div>-->
                         </div>
-<!--
+                        <!--
                         <div class="chatbox">Greg Abbott, the Republican governor of the
                             country’s largest Republican-controlled
                             state, is facing increasing pressure over his
                             decision to open the economy.</div>
 -->
                     </div>
-<!--
+                    <!--
                     <div class="me">
                         <div class="chatbox">Greg Abbott, the Republican governor of the
                             country’s largest Republican-controlled </div>
@@ -118,8 +129,8 @@
 
                     </div>
                     <form class="footer" onsubmit="return false;">
-                        <input type="text" placeholder="Your message..">
-                        <button type="submit">Send</button>
+                        <input type="text" placeholder="메세지를 입력하세요.">
+                        <button type="submit" style="color:#fff">전송</button>
                     </form>
                     <template data-template="message">
                         <div class="message">
@@ -129,52 +140,45 @@
                     </template>
                 </div>
             </div>
-                <div class="file-share">
-                    <div class="title" id="file_title">파일공유리스트 (0)</div>
-                    <!--               파일 수 만큼 숫자변경 -->
+            <div class="file-share">
+                <div class="title" id="file_title">파일공유리스트 (0)</div>
+                <!--               파일 수 만큼 숫자변경 -->
 
-                    <div class="wrap" id="read">
-                        <!--
+                <div class="wrap" id="read">
+                    <!--
                         <div class="file">
                             <p>과제01.jpg</p>
                             <p>보기</p>
                             <p>다운받기</p>
                         </div>
 -->
-                        <!-- <?php include 'readdir.php'?> -->
-                    </div>
-                
+                    <!-- <?php include 'readdir.php'?> -->
+                </div>
+
             </div>
             <div class="accessor">
                 <div class="title" id="join_user">현재접속자리스트 (0/4)</div>
                 <!--            접속자 수 만큼 변경-->
                 <div class="wrap" id="join_list">
-                    
+
                 </div>
             </div>
 
         </section>
         <section id="section01">
             <div class="tab-wrap">
-                <div class="tab on" onclick="openTab(event, 'tab1')">화상교육</div>
-                <div class="tab" onclick="openTab(event, 'tab2')">그림판</div>
-                <div class="tab" onclick="openTab(event, 'tab3')">오디오공유</div>
-                <div class="tab" onclick="openTab(event, 'tab4')">웹공유</div>
+                <div class="tab on first_tab" onclick="openTab(event, 'tab1')">화상교육</div>
+                <div class="tab other_tab" onclick="openTab(event, 'tab2')">그림판</div>
+                <div class="tab other_tab" onclick="openTab(event, 'tab3')">오디오공유</div>
+                <div class="tab other_tab" onclick="openTab(event, 'tab4')">웹공유</div>
+                <div class="rec">
+                    <div class="rec-box on">녹화중</div>
+                    <div id="time" class="rec-time"></div>
+                    <div class="test"></div>
+                </div>
             </div>
             <div class="c-box01 tabcontent" id="tab1">
-                <div class="col-lg-5">
-                    <div class="mt-12 text-center">
-                      <span class="mr-2">
-                        <a
-                          id="enterBtn"
-                          href="#"
-                          class="btn btn-primary btn-user text-center"
-                        >
-                        시작
-                        </a>
-                      </span>
-                    </div>
-                </div>
+
                 <!-- <div class="row">
                     <div id="controlLeft" class="col-6 col-sm-6 col-md-6">
                         <button id="startCall">시작</button>
@@ -209,7 +213,6 @@
                         </div>
                     </form>
                 </div>
-                오디오 공유
             </div>
             <div class="c-box01 tabcontent" id="tab4" style="display:none;overflow-y: scroll;">
                 <div>
@@ -219,17 +222,17 @@
                 <div id="naver"></div>
             </div>
         </section>
-        
+
     </main>
 
     <footer>
 
     </footer>
-<!--    <script src="video.js"></script>-->
+    <!--    <script src="video.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk/remon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk"></script>
@@ -239,11 +242,11 @@
         const roomHash = location.hash.substring(1);
 
         const enterBtn = document.querySelector("#enterBtn");
-        const otherVideos= document.getElementById('otherVideos');
+        const otherVideos = document.getElementById('otherVideos');
         let remonCall;
         let isConnected = false;
         let remon;
-        let remonRoom=[];
+        let remonRoom = [];
         const key = "6e779e7ed3e3bf6301d6b49529863fa0ebea59b903f2972c5565ba12201edb34";
         const serviceId = "ad1f48ee-4e50-4e45-9cb8-ce667a272173";
 
@@ -251,8 +254,8 @@
             credential: {
                 key: key,
                 serviceId: serviceId,
-                wsurl : "wss://signal.remotemonster.com/ws",
-                resturl : "https://signal.remotemonster.com/rest",
+                wsurl: "wss://signal.remotemonster.com/ws",
+                resturl: "https://signal.remotemonster.com/rest",
             },
             view: {
                 // remote1: '#remoteVideo1',
@@ -261,9 +264,18 @@
             },
             media: {
                 video: {
-                    width: { min: 250, max: 250 },
-                    height: { min: 250, max: 250 },
-                    frameRate: { min: 8, max: 30 },
+                    width: {
+                        min: 250,
+                        max: 250
+                    },
+                    height: {
+                        min: 250,
+                        max: 250
+                    },
+                    frameRate: {
+                        min: 8,
+                        max: 30
+                    },
                     maxBandwidth: 250,
                     codec: 'H264'
                 },
@@ -272,62 +284,64 @@
         }
 
         const videoAttrs = {
-                            id : "other",
-                            class : "remote-video center w-320 h-240",
-                            autoplay : true,
-                            muted : true,
-                            playsinline: true,
-                            style :"z-index:1;background: rgba(0, 0, 0, 0.5); width: 250px;height: 250px; object-fit: cover; margin: 10px"
-                          }
+            id: "other",
+            class: "remote-video center w-320 h-240",
+            autoplay: true,
+            muted: true,
+            playsinline: true,
+            style: "z-index:1;background: rgba(0, 0, 0, 0.5); width: 250px;height: 250px; object-fit: cover; margin: 10px"
+        }
 
         const listener = {
             onConnect(chid) {
-            console.log(`remon.listener.onConnect ${chid} at listener`);
+                console.log(`remon.listener.onConnect ${chid} at listener`);
             },
             onComplete() {
-            console.log(`remon.listener.onComplete: ${remon.getChannelId()} `);
-            remonRoom[remon.getChannelId()] = true;
+                console.log(`remon.listener.onComplete: ${remon.getChannelId()} `);
+                remonRoom[remon.getChannelId()] = true;
             },
             onDisconnectChannel() {
-            // is called when other peer hang up.
-            remon.close();
-            isConnected = false;
+                // is called when other peer hang up.
+                remon.close();
+                isConnected = false;
             },
             onClose() {
-            // is called when remon.close() method is called.
-            console.log(`remon.listener.onClose: ${remon.getChannelId()}`);
+                // is called when remon.close() method is called.
+                console.log(`remon.listener.onClose: ${remon.getChannelId()}`);
             },
             onError(error) {
-            console.log(`remon.listener.onError: ${remon.getChannelId()} ${error}`);
+                console.log(`remon.listener.onError: ${remon.getChannelId()} ${error}`);
             },
             onStat(result) {
-            // console.log(`EVENT FIRED: onStat:  ${JSON.stringify(result)}`);
+                // console.log(`EVENT FIRED: onStat:  ${JSON.stringify(result)}`);
             },
-            onRoomEvent(result){
-            //join
+            onRoomEvent(result) {
+                //join
                 switch (result.event) {
-                case 'join':
-                    if(!remonRoom[result.channel.id]){
-                        remonRoom[result.channel.id] = true;
-                        let newVideo = document.createElement('video')
-                        videoAttrs.id = result.channel.id.replace(":","-");
-                        Object.keys(videoAttrs).forEach(key => newVideo.setAttribute(key, videoAttrs[key]))
-                        config.view.remote = `#${newVideo.id}`
-                        newVideo.remon = new Remon({ config })
-                        otherVideos.append(newVideo)
-                        newVideo.remon.joinCast(newVideo.id.replace("-",":"))
-                    }
-                    break;
-                case 'leave':
-                    if(remonRoom[result.channel.id] && result.channel.id !== remon.getChannelId()){
-                        let video = document.getElementById(result.channel.id.replace(":","-"));
-                        otherVideos.removeChild(video);
-                        delete remonRoom[result.channel.id]
-                    }
-                    break;
+                    case 'join':
+                        if (!remonRoom[result.channel.id]) {
+                            remonRoom[result.channel.id] = true;
+                            let newVideo = document.createElement('video')
+                            videoAttrs.id = result.channel.id.replace(":", "-");
+                            Object.keys(videoAttrs).forEach(key => newVideo.setAttribute(key, videoAttrs[key]))
+                            config.view.remote = `#${newVideo.id}`
+                            newVideo.remon = new Remon({
+                                config
+                            })
+                            otherVideos.append(newVideo)
+                            newVideo.remon.joinCast(newVideo.id.replace("-", ":"))
+                        }
+                        break;
+                    case 'leave':
+                        if (remonRoom[result.channel.id] && result.channel.id !== remon.getChannelId()) {
+                            let video = document.getElementById(result.channel.id.replace(":", "-"));
+                            otherVideos.removeChild(video);
+                            delete remonRoom[result.channel.id]
+                        }
+                        break;
                 }
-            console.log(`EVENT FIRED: onRoomEvent channel Id : ${remon.getChannelId()}`)
-            console.log(`EVENT FIRED: onRoomEvent: ${JSON.stringify(result)}`)
+                console.log(`EVENT FIRED: onRoomEvent channel Id : ${remon.getChannelId()}`)
+                console.log(`EVENT FIRED: onRoomEvent: ${JSON.stringify(result)}`)
             }
         };
         /*
@@ -345,48 +359,53 @@
             // alert(r);
             if (isConnected) {
                 cnt--;
-            isConnected = false;
-            document.querySelector('#enterBtn').innerHTML = "시작";
-            Object.keys(remonRoom).forEach(function(id){
-                if( id !== remon.getChannelId()){
-                let video = document.getElementById(id.replace(":","-"));
-                if(video && video.remon){
-                    otherVideos.removeChild(video);
-                }
-                }
-                delete remonRoom[id];
-            })
-            document.getElementById('join_user').innerHTML = "현재접속자리스트 ("+cnt+"/4)";
-            remon.close()
+                isConnected = false;
+                document.querySelector('#enterBtn').innerHTML = "시작";
+                Object.keys(remonRoom).forEach(function(id) {
+                    if (id !== remon.getChannelId()) {
+                        let video = document.getElementById(id.replace(":", "-"));
+                        if (video && video.remon) {
+                            otherVideos.removeChild(video);
+                        }
+                    }
+                    delete remonRoom[id];
+                })
+                document.getElementById('join_user').innerHTML = "현재접속자리스트 (" + cnt + "/4)";
+                remon.close()
             } else {
-            isConnected = true;
-            cnt++;
-            document.querySelector('#enterBtn').innerHTML = "종료";
-            remon = new Remon({ config, listener });
-            await remon.createRoom(r);
-            let participants = await remon.fetchRooms(r);
-            participants.forEach(async function(participant){
-                if(!remonRoom[participant.id]){
+                isConnected = true;
+                cnt++;
+                document.querySelector('#enterBtn').innerHTML = "종료";
+                remon = new Remon({
+                    config,
+                    listener
+                });
+                await remon.createRoom(r);
+                let participants = await remon.fetchRooms(r);
+                participants.forEach(async function(participant) {
+                    if (!remonRoom[participant.id]) {
                         remonRoom[participant.id] = true;
                         let newVideo = document.createElement('video');
-                        videoAttrs.id =  participant.id.replace(":","-");
+                        videoAttrs.id = participant.id.replace(":", "-");
                         Object.keys(videoAttrs).forEach(key => newVideo.setAttribute(key, videoAttrs[key]))
                         config.view.remote = `#${newVideo.id}`
-                        newVideo.remon = new Remon({ config })
+                        newVideo.remon = new Remon({
+                            config
+                        })
                         otherVideos.append(newVideo)
-                        await newVideo.remon.joinCast(newVideo.id.replace("-",":"));
+                        await newVideo.remon.joinCast(newVideo.id.replace("-", ":"));
                     }
-            })
-            document.getElementById('join_user').innerHTML = "현재접속자리스트 ("+cnt+"/4)";
-            document.getElementById('join_list').append('<div class="user"><p>'+newVideo.id+'</p></div>');
+                })
+                document.getElementById('join_user').innerHTML = "현재접속자리스트 (" + cnt + "/4)";
+                document.getElementById('join_list').append('<div class="user"><p>' + newVideo.id + '</p></div>');
             }
         }
 
 
         enterBtn.addEventListener("click",
             evt => {
-            start(roomHash);
-            evt.preventDefault();
+                start(roomHash);
+                evt.preventDefault();
             },
             false
         );
@@ -437,30 +456,31 @@
     <script src="js/file_main.js"></script>
     <!--    <script src="https://github.com/webrtc/samples/blob/gh-pages/src/js/lib/ga.js"></script>-->
     <script src="js/ga.js"></script>
-    
+
 </body>
 <script>
     var time = 1200;
     var min = "";
     var sec = "";
 
-    var x = setInterval(function() {
-        min = parseInt(time/60);
-        if((time%60)<10){
-            sec = "0"+time%60;
-        } else {
-            sec = time%60;
-        }
-        
+    ////    var x = setInterval(function() {
+    ////        min = parseInt(time/60);
+    ////        if((time%60)<10){
+    ////            sec = "0"+time%60;
+    ////        } else {
+    ////            sec = time%60;
+    ////        }
+    ////        
+    //
+    //        document.getElementById('time').innerHTML = min + " : " + sec;
+    //        time--;
+    //
+    //        if(time<0){
+    //            clearInterval(x);
+    //            document.getElementById('time').innerHTML = "00:00";
+    //        }
+    //    }, 1000);
 
-        document.getElementById('time').innerHTML = min + " : " + sec;
-        time--;
-
-        if(time<0){
-            clearInterval(x);
-            document.getElementById('time').innerHTML = "00:00";
-        }
-    }, 1000);
 </script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" href="css/chat.css">
@@ -497,7 +517,7 @@
         document.getElementById('file_name').innerHTML = index;
         // document.querySelector('#sendFile').click();
 
-               var form = $('#fileInput')[0];
+        var form = $('#fileInput')[0];
 
         var formData = new FormData();
         formData.append('file', $('#fileInput')[0].files[0]);
@@ -567,44 +587,48 @@
 
 </script>
 <script>
-$('.messages').scrollTop($('.messages').prop('scrollHeight'));
+    $('.messages').scrollTop($('.messages').prop('scrollHeight'));
+
 </script>
 <script>
     var audioContext = new AudioContext();
     var gainNode = audioContext.createGain();
-    navigator.mediaDevices.getUserMedia({audio:true})
-    .then((stream)=>{
-        console.log('got stream', stream);
-        window.orginalStream = stream;
-        return stream;
-    })
-    .then((stream) => {
-        audioSource = audioContext.createMediaStreamSource(stream),
-        audioDestination = audioContext.createMediaStreamDestination();
-        audioSource.connect(gainNode);
-        gainNode.connect(audioDestination);
-        gainNode.gain.value = 1;
-        window.localStream = audioDestination.stream;
-    })
-    .catch((err) => {
-        console.error('Something wrong in capture stream', err);
-    })
+    navigator.mediaDevices.getUserMedia({
+            audio: true
+        })
+        .then((stream) => {
+            console.log('got stream', stream);
+            window.orginalStream = stream;
+            return stream;
+        })
+        .then((stream) => {
+            audioSource = audioContext.createMediaStreamSource(stream),
+                audioDestination = audioContext.createMediaStreamDestination();
+            audioSource.connect(gainNode);
+            gainNode.connect(audioDestination);
+            gainNode.gain.value = 1;
+            window.localStream = audioDestination.stream;
+        })
+        .catch((err) => {
+            console.error('Something wrong in capture stream', err);
+        })
 
-    function changeMicrophoneLevel(value){
-        if(value && value >= 0 && value <= 2){
+    function changeMicrophoneLevel(value) {
+        if (value && value >= 0 && value <= 2) {
             gainNode.gain.value = value;
         }
     }
 
-    function vChange(t, v){
-        if(t=="sound"){
+    function vChange(t, v) {
+        if (t == "sound") {
             document.querySelector("video").volume = v;
-        } else if(t=="mic"){
+        } else if (t == "mic") {
             changeMicrophoneLevel(v);
         }
-        
+
         // $('.test').text(t+" "+v);
     }
+
 </script>
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
@@ -614,4 +638,5 @@ $('.messages').scrollTop($('.messages').prop('scrollHeight'));
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 <!-- Custom scripts for all pages-->
 <script src="js/sb-admin-2.min.js"></script>
+
 </html>
