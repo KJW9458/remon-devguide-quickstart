@@ -10,7 +10,7 @@ function randomEmoji() {
 }
 
 const emoji = randomEmoji();
-// const name = prompt("What's your name?");
+//const name = prompt("What's your name?");
 
 // Generate random chat hash if needed
 if (!location.hash) {
@@ -51,10 +51,10 @@ drone.on('open', error => {
   // connected to the room (including us). Signaling server is ready.
   room.on('members', members => {
     if (members.length >= 3) {
-      return alert('The room is full');
+      // return alert('The room is full');
     }
     // If we are the second user to connect to the room we will be creating the offer
-    const isOfferer = members.length === 2;
+    const isOfferer = (members.length >= 2);
     startWebRTC(isOfferer);
   });
 });
@@ -142,10 +142,10 @@ function setupDataChannel() {
 function checkDataChannelState() {
   console.log('WebRTC channel state is:', dataChannel.readyState);
   if (dataChannel.readyState === 'open') {
-    insertMessageToDOM({content: 'WebRTC data channel is now open'});
+    insertMessageToDOM({content: '입장'});
   }
 }
-
+//WebRTC data channel is now open
 function insertMessageToDOM(options, isFromMe) {
   const template = document.querySelector('template[data-template="message"]');
   const nameEl = template.content.querySelector('.message__name');
